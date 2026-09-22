@@ -30,8 +30,33 @@ The Maps page does **not** call the GitHub API from the browser. Instead:
    so there's no rate-limit risk no matter how much traffic the site gets.
 
 **To publish a new map:** just create a new [GitHub Release](../../releases/new) with the
-map's `.zip` (or other files) attached. Within a few hours (or immediately if you run the
-"Fetch Releases Data" workflow manually from the Actions tab) it'll appear on the Maps page.
+map's `.zip` (or other files) attached. Give it a title that starts with `[PC]` or `[CE]`,
+for example `[CE] Liberty Hangar`, so the site knows which game the map is for. Within a
+few hours (or immediately if you run the "Fetch Releases Data" workflow manually from the
+Actions tab) it'll appear on the Maps page.
+
+### Tagging releases by game
+
+The Maps page has an "All / Combat Evolved / Custom Edition" filter, and each map card
+shows a `PC` or `CE` badge. Which one it gets is decided by `detectGames()` in the fetch
+workflow, which checks, in order:
+
+| Priority | Source                                                                            | Example                                    |
+| -------- | --------------------------------------------------------------------------------- | ------------------------------------------ |
+| 1        | Exact tag match                                                                   | `PC`, `CE`, `PC+CE`, `CE+PC`               |
+| 2        | Bracket in the release title                                                      | `[CE] Liberty Hangar`, `[PC+CE] Crossover` |
+| 3        | "Custom Edition" / "Combat Evolved" / `CE` / `PC` anywhere in title, tag, or body | `Halo CE remake of...`                     |
+| 4        | Fallback                                                                          | Defaults to `CE`                           |
+
+The recommended convention is priority 2: **always start the release title with `[PC]` or
+`[CE]`.** GitHub requires every release tag to be unique, so you cannot tag multiple
+releases `CE` - but the `[CE]` / `[PC]` marker in the title works every time, and the
+release's tag itself can be anything (a map name, a version number, and so on).
+
+**Note:** if the marker is missing from the title and nothing else in the release mentions
+the game, the release will silently be classified as Custom Edition. If that happens, edit
+the release and add `[PC]` or `[CE]` to the title, then run the "Fetch Releases Data"
+workflow again.
 
 **Optional, but helpful**: dropping a screenshot into the release notes (drag-and-drop an image into the
 GitHub release description) will automatically be used as the map's thumbnail. You can also
