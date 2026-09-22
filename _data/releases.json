@@ -1,5 +1,28 @@
 [
   {
+    "id": 394192355,
+    "tag": "CE-Triduct",
+    "name": "[CE]",
+    "body": "Halo CE Triduct revised",
+    "prerelease": false,
+    "published_at": "2026-09-22T23:41:47Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/CE-Triduct",
+    "games": [
+      "CE"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_triduct.7z",
+        "size": 29081263,
+        "size_human": "28 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-Triduct/liberty_triduct.7z",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394166399,
     "tag": "CE1",
     "name": "[CE] Frozen Beaver Creek",
