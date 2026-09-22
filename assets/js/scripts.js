@@ -1,6 +1,6 @@
 /*
   NC Halo Maps
-  Site for NakedChick's Halo: Custom Edition maps.
+  Site for NakedChick's Halo: PC/CE custom maps.
   Site Developer: https://github.com/Chalwk/
 */
 

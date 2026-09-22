@@ -59,13 +59,21 @@ body:
     validations:
       required: false
 
+  - type: dropdown
+    id: game
+    attributes:
+      label: Which game? (if map-related)
+      options:
+        - Halo Combat Evolved (Xbox/PC/MCC)
+        - Halo Custom Edition
+    validations:
+      required: false
+
   - type: input
     id: platform
     attributes:
-      label: Halo CE version / OS (if map-related)
+      label: Game version / OS (if map-related)
       placeholder: e.g. Halo CE 1.0.10, Windows 11
-    validations:
-      required: false
 
   - type: textarea
     id: screenshots

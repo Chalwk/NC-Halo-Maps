@@ -1,7 +1,7 @@
 # NC Halo Maps
 
 This repository contains the source code for the NC Halo Maps website - a static site built
-for NakedChick's custom Halo: Custom Edition maps, hosted on GitHub Pages.
+for NakedChick's custom Halo: PC/CE maps, hosted on GitHub Pages.
 
 Browse, preview, and download map releases on this auto-updating static site.
 
@@ -45,7 +45,7 @@ attach an image file directly to the release for the same effect.
 
 All content in this repository, including source code, images, and documentation, is proprietary. You may not copy,
 redistribute, or use any assets without explicit prior written permission. This does not apply to the map files
-themselves, which are distributed via GitHub Releases for download and use with Halo: Custom Edition.
+themselves, which are distributed via GitHub Releases for download and use with Halo: Custom Edition, and Halo: Combat Evolved.
 
 For the full legal terms, please read the [LICENSE](LICENSE) file.
 

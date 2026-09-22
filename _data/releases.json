@@ -8,6 +8,9 @@
     "published_at": "2026-01-01T00:00:00Z",
     "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases",
     "thumbnail": null,
+    "games": [
+      "CE"
+    ],
     "assets": [
       {
         "name": "example_map.zip",
