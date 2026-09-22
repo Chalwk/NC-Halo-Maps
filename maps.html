@@ -24,18 +24,30 @@ description: Browse and download all custom Halo: PC/CE maps by NakedChick.
         <i aria-hidden="true" class="fas fa-magnifying-glass"></i>
         <input aria-label="Search maps" id="map-search" placeholder="Search maps by name..." type="text">
     </div>
+    <div aria-label="Filter by game" class="game-filters" role="group">
+        <button aria-pressed="true" class="filter-btn active" data-filter="all" type="button">All</button>
+        <button aria-pressed="false" class="filter-btn" data-filter="PC" type="button">Combat Evolved</button>
+        <button aria-pressed="false" class="filter-btn" data-filter="CE" type="button">Custom Edition</button>
+    </div>
     <span class="map-count">{{ releases.size }} map{% if releases.size != 1 %}s{% endif %} published</span>
 </div>
 
 {% if releases.size > 0 %}
 <div class="maps-grid" id="maps-grid">
     {% for release in releases %}
-    <article class="map-card" data-name="{{ release.name | downcase }}" id="release-{{ release.id }}">
+    <article class="map-card" data-games="{{ release.games | join: ',' }}" data-name="{{ release.name | downcase }}"
+        id="release-{{ release.id }}">
         <div class="map-thumb">
             {% if release.thumbnail %}
             <img alt="{{ release.name }} preview" loading="lazy" src="{{ release.thumbnail }}">
             {% else %}
             <i class="fas fa-map"></i>
+            {% endif %}
+            {% if release.games.size > 0 %}
+            <span
+                class="badge badge-game badge-game-{{ release.games | first | downcase }}{% if release.games.size > 1 %} badge-game-both{% endif %}">
+                {% if release.games.size > 1 %}PC + CE{% elsif release.games.first == 'PC' %}PC{% else %}CE{% endif %}
+            </span>
             {% endif %}
             {% if release.prerelease %}
             <span class="badge badge-prerelease">Beta</span>
@@ -122,6 +134,36 @@ description: Browse and download all custom Halo: PC/CE maps by NakedChick.
         box-shadow: 0 0 10px var(--border-glow);
     }
 
+    .game-filters {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        padding: 0.55rem 1.15rem;
+        border-radius: 999px;
+        border: 1px solid var(--border-glow);
+        background: rgba(0, 0, 0, 0.3);
+        color: var(--text-light);
+        font-family: var(--font-header), serif;
+        font-weight: 500;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .filter-btn:hover {
+        border-color: var(--primary);
+        background: rgba(201, 161, 90, 0.1);
+    }
+
+    .filter-btn.active {
+        background: var(--primary);
+        color: var(--bg-dark);
+        border-color: var(--primary);
+    }
+
     .map-count {
         color: var(--text-muted);
         font-style: italic;
@@ -174,7 +216,6 @@ description: Browse and download all custom Halo: PC/CE maps by NakedChick.
     .badge {
         position: absolute;
         top: 0.7rem;
-        right: 0.7rem;
         padding: 0.25rem 0.7rem;
         border-radius: 999px;
         font-size: 0.75rem;
@@ -184,8 +225,26 @@ description: Browse and download all custom Halo: PC/CE maps by NakedChick.
     }
 
     .badge-prerelease {
+        right: 0.7rem;
         background: var(--accent);
         color: #fff;
+    }
+
+    .badge-game {
+        left: 0.7rem;
+        color: #fff;
+    }
+
+    .badge-game-pc {
+        background: #4a7c9e;
+    }
+
+    .badge-game-ce {
+        background: #6a8f4a;
+    }
+
+    .badge-game-both {
+        background: linear-gradient(90deg, #4a7c9e 50%, #6a8f4a 50%);
     }
 
     .map-body {

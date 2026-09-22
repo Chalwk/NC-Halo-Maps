@@ -43,16 +43,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('map-search');
     const mapsGrid = document.getElementById('maps-grid');
     const searchEmpty = document.querySelector('.search-empty');
+    const filterButtons = document.querySelectorAll('.filter-btn');
 
-    if (searchInput && mapsGrid) {
+    if (mapsGrid) {
         const cards = Array.from(mapsGrid.querySelectorAll('.map-card'));
+        let activeFilter = 'all';
 
-        searchInput.addEventListener('input', () => {
-            const query = searchInput.value.trim().toLowerCase();
+        function applyFilters() {
+            const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
             let visibleCount = 0;
 
             cards.forEach(card => {
-                const matches = !query || card.dataset.name.includes(query);
+                const nameMatches = !query || card.dataset.name.includes(query);
+                const games = (card.dataset.games || '').split(',').filter(Boolean);
+                const gameMatches = activeFilter === 'all' || games.includes(activeFilter);
+                const matches = nameMatches && gameMatches;
+
                 card.style.display = matches ? '' : 'none';
                 if (matches) visibleCount++;
             });
@@ -60,6 +66,23 @@ document.addEventListener('DOMContentLoaded', function () {
             if (searchEmpty) {
                 searchEmpty.hidden = visibleCount !== 0;
             }
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('input', applyFilters);
+        }
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-pressed', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
+                activeFilter = btn.dataset.filter;
+                applyFilters();
+            });
         });
     }
 });
