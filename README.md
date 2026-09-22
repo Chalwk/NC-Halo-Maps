@@ -3,6 +3,8 @@
 This repository contains the source code for the NC Halo Maps website - a static site built
 for NakedChick's custom Halo: Custom Edition maps, hosted on GitHub Pages.
 
+Browse, preview, and download map releases on this auto-updating static site.
+
 <div align="center">
   <a href="https://nakedchick-code.github.io/NC-Halo-Maps/">
     <img src="https://img.shields.io/badge/VISIT_WEBSITE-c9a15a?style=for-the-badge&logo=github"
