@@ -18,9 +18,7 @@ author:
   name: NakedChick
   url: https://github.com/nakedchick-code
 
-# Add an image at assets/images/social-preview.png and uncomment to enable
-# rich link previews on Discord/Twitter/etc.
-# image: /assets/images/social-preview.png
+image: /assets/images/social-preview.png
 favicon: favicon.ico
 
 repository: nakedchick-code/NC-Halo-Maps
