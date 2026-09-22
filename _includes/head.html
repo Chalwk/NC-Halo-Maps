@@ -1,0 +1,54 @@
+<!--
+  NC Halo Maps
+  Site for NakedChick's Halo: Custom Edition maps.
+  Site Developer: https://github.com/Chalwk/
+-->
+
+<!-- basic document metadata -->
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale={{ site.site_scale | default: 1 }}" name="viewport">
+
+<!-- title -->
+<title>
+  {% if page.title %}
+  {{ page.title }} | {{ site.title }}
+  {% else %}
+  {{ site.title }}
+  {% endif %}
+</title>
+
+<meta content="{{ page.description | default: site.description }}" name="description">
+
+<!-- SEO -->
+{% seo %}
+
+<!-- social metadata -->
+<meta content="{{ page.title | default: site.title }}" property="og:title">
+<meta content="{{ page.description | default: site.description }}" property="og:description">
+{% if page.image or site.image %}
+<meta content="{{ page.image | default: site.image | absolute_url }}" property="og:image">
+<meta content="{{ site.title }} Logo" property="og:image:alt">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="{{ page.image | default: site.image | absolute_url }}" name="twitter:image">
+{% endif %}
+<meta content="{{ page.url | absolute_url }}" property="og:url">
+<meta content="website" property="og:type">
+<meta content="{{ page.title | default: site.title }}" name="twitter:title">
+<meta content="{{ page.description | default: site.description }}" name="twitter:description">
+
+<!-- preconnect hints for external resources -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://cdnjs.cloudflare.com" rel="preconnect">
+
+<!-- favicon -->
+{% if site.favicon %}
+<link href="{{ site.favicon | relative_url }}" rel="icon" type="image/x-icon">
+{% endif %}
+
+<!-- stylesheets -->
+<link href="{{ site.baseurl }}/assets/css/core.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+  rel="stylesheet">

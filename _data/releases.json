@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "tag": "v1.0.0",
+    "name": "Example Map - Sample Entry",
+    "body": "This is placeholder data.\n\nOnce the **Fetch Releases Data** GitHub Action runs for the first time (or you publish your first real release), this file is automatically replaced with your actual GitHub Releases. You can safely delete this sample entry - it will be overwritten.",
+    "prerelease": false,
+    "published_at": "2026-01-01T00:00:00Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "example_map.zip",
+        "size": 104857600,
+        "size_human": "100 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases",
+        "content_type": "application/zip"
+      }
+    ]
+  }
+]

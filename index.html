@@ -1,0 +1,242 @@
+---
+layout: default
+title: Home
+---
+
+<!--
+  NC Halo Maps
+  Site for NakedChick's Halo: Custom Edition maps.
+  Site Developer: https://github.com/Chalwk/
+-->
+
+<div class="hero">
+    <i aria-hidden="true" class="fas fa-map hero-icon"></i>
+    <h2>Welcome to NC Halo Maps</h2>
+    <p>
+        This is the home of NakedChick's custom multiplayer maps for <strong>Halo: Custom Edition</strong>.
+        Every map below is built by hand, released here, and free to download - no forge, no shortcuts,
+        just good old-fashioned level design.
+    </p>
+    <div class="hero-actions">
+        <a class="btn" href="{{ site.baseurl }}/maps"><i class="fas fa-map-location-dot"></i> Browse Maps</a>
+        <a class="btn btn-outline" href="{{ site.links.releases }}" rel="noopener" target="_blank">
+            <i class="fab fa-github"></i> View on GitHub
+        </a>
+    </div>
+</div>
+
+<h2><i class="fas fa-scroll"></i> About the Cartographer</h2>
+<div class="about-panel">
+    <p>
+        NakedChick has been mapping for the Halo Custom Edition community for years, crafting original
+        multiplayer layouts for CTF, Slayer, Oddball, and Race. Every release on this site ships as a
+        ready-to-install map pack - grab it, drop it in your Halo CE maps folder, and you're set.
+    </p>
+</div>
+
+<h2><i class="fas fa-star"></i> Latest Releases</h2>
+{% assign latest = site.data.releases | sort: 'published_at' | reverse | slice: 0, 3 %}
+{% if latest.size > 0 %}
+<div class="feature-grid">
+    {% for item in latest %}
+    <div class="feature-item">
+        {% if item.thumbnail %}
+        <img alt="{{ item.name }} preview" class="feature-thumb" loading="lazy" src="{{ item.thumbnail }}">
+        {% else %}
+        <i class="fas fa-map feature-icon"></i>
+        {% endif %}
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.body | markdownify | strip_html | truncatewords: 20 }}</p>
+        <a class="btn btn-small" href="{{ site.baseurl }}/maps#release-{{ item.id }}">View Details</a>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+    <i class="fas fa-box-open"></i>
+    <p>No maps published yet - check back soon!</p>
+</div>
+{% endif %}
+
+<div class="join-section">
+    <h3><i class="fas fa-circle-info"></i> How Downloads Work</h3>
+    <p>
+        Every map is published as a <a class="rules-link" href="{{ site.links.releases }}" rel="noopener"
+            target="_blank">GitHub Release</a>, complete with a description and the map files attached
+        directly - no third-party download sites, no ads, no waiting.
+    </p>
+    <p>
+        Found a bug or have feedback on a map? <a class="rules-link" href="{{ site.links.issues }}"
+            rel="noopener" target="_blank">Open an issue</a> and let NakedChick know.
+    </p>
+</div>
+
+<style>
+    .hero {
+        text-align: center;
+        padding: 3rem 2rem;
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        margin-bottom: 3rem;
+        border: 1px solid var(--border-glow);
+    }
+
+    .hero-icon {
+        font-size: 2.6rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .hero h2 {
+        font-size: clamp(1.5rem, 6vw, 2.6rem) !important;
+        white-space: normal;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+        letter-spacing: 1px;
+        line-height: 1.1;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+        max-width: 850px;
+        margin: 0 auto;
+        color: var(--text-light);
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+
+    .about-panel {
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--border-glow);
+        border-radius: 18px;
+        padding: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .about-panel p {
+        color: var(--text-light);
+        font-size: 1.1rem;
+    }
+
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0 3rem;
+    }
+
+    .feature-item {
+        background: rgba(0, 0, 0, 0.25);
+        border: 1px solid var(--border-glow);
+        border-radius: 18px;
+        padding: 1.75rem 1.5rem;
+        text-align: center;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-item:hover {
+        border-color: var(--accent);
+        box-shadow: 0 0 15px var(--border-glow);
+    }
+
+    .feature-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+    }
+
+    .feature-thumb {
+        width: 100%;
+        max-width: 220px;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid var(--border-glow);
+        margin-bottom: 1rem;
+    }
+
+    .feature-item h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.6rem;
+        color: var(--accent);
+    }
+
+    .feature-item p {
+        color: var(--text-muted);
+        line-height: 1.5;
+        margin-bottom: 1.2rem;
+        flex-grow: 1;
+    }
+
+    .empty-state {
+        text-align: center;
+        color: var(--text-muted);
+        padding: 3rem 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .empty-state i {
+        font-size: 2.5rem;
+        display: block;
+        margin-bottom: 1rem;
+        color: var(--primary);
+    }
+
+    .join-section {
+        text-align: center;
+        background: rgba(0, 0, 0, 0.25);
+        border: 1px solid var(--border-glow);
+        border-radius: 24px;
+        padding: 2.25rem;
+        margin: 2rem 0 1rem;
+    }
+
+    .join-section h3 {
+        font-size: 1.7rem;
+        color: var(--accent);
+        margin-bottom: 1rem;
+    }
+
+    .join-section p {
+        color: var(--text-light);
+        margin-bottom: 1rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .join-section .rules-link {
+        font-weight: bold;
+        color: var(--primary);
+        text-decoration: none;
+    }
+
+    .join-section .rules-link:hover {
+        color: var(--accent);
+    }
+
+    @media (max-width: 700px) {
+        .hero h2 {
+            font-size: 2rem;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+        }
+
+        .hero {
+            padding: 2rem 1rem;
+        }
+    }
+</style>

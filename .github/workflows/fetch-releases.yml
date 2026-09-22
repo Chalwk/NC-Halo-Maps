@@ -1,0 +1,116 @@
+name: Fetch Releases Data
+
+#
+# Technical note for those who care:
+#
+
+# This workflow runs on a schedule and whenever a release changes,
+# using the automatic GITHUB_TOKEN (1,000 requests/hour quota).
+# It writes the results to _data/releases.json, which Jekyll then reads
+# at build time. Because the data is baked into the static site, visitors'
+# browsers never call the GitHub API directly, so there's no risk of the
+# unauthenticated public rate limit (60 requests/hour) ever being hit.
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" # every 6 hours
+  release:
+    types: [published, edited, unpublished, deleted, prereleased, released]
+  workflow_dispatch: {} # lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-releases
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch releases via GitHub API
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            function humanSize(bytes) {
+              if (!bytes && bytes !== 0) return 'Unknown size';
+              const units = ['B', 'KB', 'MB', 'GB'];
+              let size = bytes;
+              let unit = 0;
+              while (size >= 1024 && unit < units.length - 1) {
+                size /= 1024;
+                unit++;
+              }
+              return `${size.toFixed(size >= 10 || unit === 0 ? 0 : 1)} ${units[unit]}`;
+            }
+
+            function extractThumbnail(body) {
+              if (!body) return null;
+              // First markdown image in the release body, e.g. ![alt](url)
+              const match = body.match(/!\[[^\]]*\]\((https?:\/\/[^\s)]+)\)/);
+              return match ? match[1] : null;
+            }
+
+            const IMAGE_RE = /\.(png|jpe?g|gif|webp)$/i;
+
+            const releases = await github.paginate(github.rest.repos.listReleases, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              per_page: 100
+            });
+
+            const data = releases
+              .filter(r => !r.draft)
+              .map(r => {
+                const imageAssets = r.assets.filter(a => IMAGE_RE.test(a.name));
+                const mapAssets = r.assets.filter(a => !IMAGE_RE.test(a.name));
+
+                return {
+                  id: r.id,
+                  tag: r.tag_name,
+                  name: r.name || r.tag_name,
+                  body: r.body || '',
+                  prerelease: !!r.prerelease,
+                  published_at: r.published_at || r.created_at,
+                  html_url: r.html_url,
+                  thumbnail: (imageAssets[0] && imageAssets[0].browser_download_url) || extractThumbnail(r.body),
+                  assets: mapAssets.map(a => ({
+                    name: a.name,
+                    size: a.size,
+                    size_human: humanSize(a.size),
+                    download_count: a.download_count,
+                    browser_download_url: a.browser_download_url,
+                    content_type: a.content_type
+                  }))
+                };
+              })
+              // newest first
+              .sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+
+            const dataDir = path.join(process.env.GITHUB_WORKSPACE, '_data');
+            fs.mkdirSync(dataDir, { recursive: true });
+            fs.writeFileSync(
+              path.join(dataDir, 'releases.json'),
+              JSON.stringify(data, null, 2) + '\n'
+            );
+
+            core.info(`Wrote ${data.length} release(s) to _data/releases.json`);
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _data/releases.json
+          if git diff --staged --quiet; then
+            echo "No changes to releases.json"
+          else
+            git commit -m "chore: update releases data"
+            git push
+          fi

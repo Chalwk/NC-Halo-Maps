@@ -1,0 +1,52 @@
+# NC Halo Maps
+# Site for NakedChick's Halo: Custom Edition maps.
+# Release data in _data/releases.json is generated automatically by
+# .github/workflows/fetch-releases.yml - do not edit that file by hand.
+
+title: NC Halo Maps
+description: Custom multiplayer maps for Halo Custom Edition, built by NakedChick.
+
+# Update these if a custom domain (CNAME file) is added later.
+url: "https://nakedchick-code.github.io"
+baseurl: "/NC-Halo-Maps"
+
+locale: en_GB
+timezone: Etc/UTC
+site_scale: 0.65
+
+author:
+  name: NakedChick
+  url: https://github.com/nakedchick-code
+
+# Add an image at assets/images/social-preview.png and uncomment to enable
+# rich link previews on Discord/Twitter/etc.
+# image: /assets/images/social-preview.png
+favicon: favicon.ico
+
+repository: nakedchick-code/NC-Halo-Maps
+
+links:
+  github: https://github.com/nakedchick-code/NC-Halo-Maps
+  releases: https://github.com/nakedchick-code/NC-Halo-Maps/releases
+  new_release: https://github.com/nakedchick-code/NC-Halo-Maps/releases/new
+  issues: https://github.com/nakedchick-code/NC-Halo-Maps/issues
+
+sass:
+  style: compressed
+
+incremental: true
+plugins_cache: true
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+relative_links:
+  enabled: true
+  collections: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"

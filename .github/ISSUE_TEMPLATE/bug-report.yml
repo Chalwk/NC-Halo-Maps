@@ -1,0 +1,92 @@
+name: 🐞 Bug Report
+description: Report a problem with a map or the website.
+title: "[Bug]: "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out as much detail as you can -
+        it makes it much easier to track down and fix the issue.
+
+  - type: dropdown
+    id: report-type
+    attributes:
+      label: What's this bug about?
+      options:
+        - A map (crashes, missing textures, broken geometry, spawn issues, etc.)
+        - The website (broken link, display issue, download not working, etc.)
+        - Something else
+    validations:
+      required: true
+
+  - type: input
+    id: map-name
+    attributes:
+      label: Map name (if applicable)
+      description: Which map is affected? Leave blank if this is a website issue.
+      placeholder: e.g. liberty_hangem
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear description of the bug.
+      placeholder: Describe what went wrong.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can this be reproduced?
+      placeholder: |
+        1. Download map / open page...
+        2. ...
+        3. ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen instead?
+    validations:
+      required: false
+
+  - type: input
+    id: platform
+    attributes:
+      label: Halo CE version / OS (if map-related)
+      placeholder: e.g. Halo CE 1.0.10, Windows 11
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or logs
+      description: Drag and drop images or paste any relevant error messages here.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Anything else that might help.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I've searched existing issues and this hasn't already been reported.
+          required: true

@@ -1,0 +1,82 @@
+---
+layout: default
+title: Page Not Found
+description: The page you are looking for could not be found.
+permalink: /404.html
+---
+
+<!--
+  NC Halo Maps
+  Site for NakedChick's Halo: Custom Edition maps.
+  Site Developer: https://github.com/Chalwk/
+-->
+
+<section class="not-found">
+    <i aria-hidden="true" class="fas fa-compass not-found-icon"></i>
+    <h1>404</h1>
+    <h2>Off the Edge of the Map</h2>
+    <p>Looks like you've wandered somewhere that doesn't exist - this coordinate isn't on any chart.</p>
+    <div class="not-found-actions">
+        <a class="btn" href="{{ site.baseurl }}/"><i class="fas fa-house"></i> Back to Base</a>
+        <a class="btn btn-outline" href="{{ site.baseurl }}/maps"><i class="fas fa-map-location-dot"></i> Browse Maps</a>
+    </div>
+</section>
+
+<style>
+    .not-found {
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .not-found-icon {
+        font-size: 3.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        animation: spin 6s linear infinite;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .not-found h1 {
+        font-size: 6rem;
+        border: none;
+        padding: 0;
+        margin-bottom: 0.5rem;
+        color: var(--primary);
+    }
+
+    .not-found h2 {
+        font-size: 2rem;
+        border: none;
+        padding: 0;
+        margin-bottom: 1rem;
+        color: var(--accent);
+    }
+
+    .not-found p {
+        font-size: 1.15rem;
+        color: var(--text-light);
+        margin-bottom: 2rem;
+        max-width: 500px;
+    }
+
+    .not-found-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+</style>

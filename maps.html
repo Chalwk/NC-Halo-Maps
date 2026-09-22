@@ -1,0 +1,284 @@
+---
+layout: default
+title: Maps
+description: Browse and download all custom Halo Custom Edition maps by NakedChick.
+---
+
+<!--
+  NC Halo Maps
+  Site for NakedChick's Halo: Custom Edition maps.
+  Site Developer: https://github.com/Chalwk/
+-->
+
+<h1>Map Library</h1>
+<p>
+    All maps here are pulled straight from
+    <a href="{{ site.links.releases }}" rel="noopener" target="_blank">GitHub Releases</a> - click a
+    file to download it directly. Extract each map into your Halo CE <code>maps</code> folder to install.
+</p>
+
+{% assign releases = site.data.releases | sort: 'published_at' | reverse %}
+
+<div class="maps-toolbar">
+    <div class="search-wrap">
+        <i aria-hidden="true" class="fas fa-magnifying-glass"></i>
+        <input aria-label="Search maps" id="map-search" placeholder="Search maps by name..." type="text">
+    </div>
+    <span class="map-count">{{ releases.size }} map{% if releases.size != 1 %}s{% endif %} published</span>
+</div>
+
+{% if releases.size > 0 %}
+<div class="maps-grid" id="maps-grid">
+    {% for release in releases %}
+    <article class="map-card" data-name="{{ release.name | downcase }}" id="release-{{ release.id }}">
+        <div class="map-thumb">
+            {% if release.thumbnail %}
+            <img alt="{{ release.name }} preview" loading="lazy" src="{{ release.thumbnail }}">
+            {% else %}
+            <i class="fas fa-map"></i>
+            {% endif %}
+            {% if release.prerelease %}
+            <span class="badge badge-prerelease">Beta</span>
+            {% endif %}
+        </div>
+
+        <div class="map-body">
+            <h3>{{ release.name }}</h3>
+            <p class="map-date">
+                <i class="fas fa-calendar"></i>
+                {{ release.published_at | date: "%d %b %Y" }}
+            </p>
+            <p class="map-description">
+                {{ release.body | markdownify | strip_html | truncatewords: 30 }}
+            </p>
+
+            {% if release.assets.size > 0 %}
+            <div class="map-downloads">
+                {% for asset in release.assets %}
+                <a class="download-btn" download href="{{ asset.browser_download_url }}">
+                    <i class="fas fa-download"></i>
+                    <span class="download-name">{{ asset.name }}</span>
+                    <span class="download-size">{{ asset.size_human }}</span>
+                </a>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="no-assets"><i class="fas fa-triangle-exclamation"></i> No files attached to this release.</p>
+            {% endif %}
+
+            <a class="map-source-link" href="{{ release.html_url }}" rel="noopener" target="_blank">
+                View full release notes on GitHub <i class="fas fa-arrow-up-right-from-square fa-xs"></i>
+            </a>
+        </div>
+    </article>
+    {% endfor %}
+</div>
+<p class="empty-state search-empty" hidden><i class="fas fa-magnifying-glass"></i> No maps match your search.</p>
+{% else %}
+<div class="empty-state">
+    <i class="fas fa-box-open"></i>
+    <p>No maps published yet - check back soon!</p>
+</div>
+{% endif %}
+
+<style>
+    .maps-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        margin: 2rem 0;
+    }
+
+    .search-wrap {
+        position: relative;
+        flex: 1 1 260px;
+        max-width: 420px;
+    }
+
+    .search-wrap i {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--text-muted);
+    }
+
+    #map-search {
+        width: 100%;
+        padding: 0.7rem 1rem 0.7rem 2.5rem;
+        border-radius: 999px;
+        border: 1px solid var(--border-glow);
+        background: rgba(0, 0, 0, 0.3);
+        color: var(--text-light);
+        font-family: var(--font-body), sans-serif;
+        font-size: 1rem;
+    }
+
+    #map-search:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 10px var(--border-glow);
+    }
+
+    .map-count {
+        color: var(--text-muted);
+        font-style: italic;
+    }
+
+    .maps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .map-card {
+        background: rgba(0, 0, 0, 0.25);
+        border: 1px solid var(--border-glow);
+        border-radius: 18px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: var(--transition);
+    }
+
+    .map-card:hover {
+        border-color: var(--primary);
+        box-shadow: 0 0 15px var(--border-glow);
+    }
+
+    .map-thumb {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .map-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .map-thumb i {
+        font-size: 2.8rem;
+        color: var(--primary);
+        opacity: 0.6;
+    }
+
+    .badge {
+        position: absolute;
+        top: 0.7rem;
+        right: 0.7rem;
+        padding: 0.25rem 0.7rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .badge-prerelease {
+        background: var(--accent);
+        color: #fff;
+    }
+
+    .map-body {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .map-body h3 {
+        color: var(--primary);
+        font-size: 1.3rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .map-date {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .map-description {
+        color: var(--text-light);
+        margin-bottom: 1.2rem;
+        flex-grow: 1;
+    }
+
+    .map-downloads {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .download-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: var(--primary);
+        color: var(--bg-dark);
+        padding: 0.6rem 1rem;
+        border-radius: 999px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    .download-btn:hover {
+        background: var(--accent);
+        color: #fff;
+    }
+
+    .download-name {
+        flex-grow: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 0.92rem;
+    }
+
+    .download-size {
+        font-size: 0.8rem;
+        opacity: 0.85;
+        white-space: nowrap;
+    }
+
+    .no-assets {
+        color: var(--text-muted);
+        font-style: italic;
+        margin-bottom: 1rem;
+    }
+
+    .map-source-link {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        text-decoration: none;
+        margin-top: auto;
+    }
+
+    .map-source-link:hover {
+        color: var(--accent);
+    }
+
+    .empty-state {
+        text-align: center;
+        color: var(--text-muted);
+        padding: 3rem 1rem;
+    }
+
+    .empty-state i {
+        font-size: 2.5rem;
+        display: block;
+        margin-bottom: 1rem;
+        color: var(--primary);
+    }
+</style>
