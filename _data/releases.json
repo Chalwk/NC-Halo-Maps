@@ -1,22 +1,24 @@
 [
   {
-    "id": 0,
-    "tag": "CE",
-    "name": "Example Map - Sample Entry",
-    "body": "This is placeholder data.\n\nOnce the **Fetch Releases Data** GitHub Action runs for the first time (or you publish your first real release), this file is automatically replaced with your actual GitHub Releases. You can safely delete this sample entry - it will be overwritten.",
+    "id": 394152899,
+    "tag": "TEST-1.0.0",
+    "name": "[PC] - TEST",
+    "body": "TEST DESCRIPTION",
     "prerelease": false,
-    "published_at": "2026-01-01T00:00:00Z",
-    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases",
+    "published_at": "2026-09-22T22:00:48Z",
+    "html_url": "https://github.com/Chalwk/NC-Halo-Maps/releases/tag/TEST-1.0.0",
+    "games": [
+      "PC"
+    ],
     "thumbnail": null,
-    "games": ["CE"],
     "assets": [
       {
-        "name": "example_map.zip",
-        "size": 104857600,
-        "size_human": "100 MB",
+        "name": "TEST.zip",
+        "size": 290,
+        "size_human": "290 B",
         "download_count": 0,
-        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases",
-        "content_type": "application/zip"
+        "browser_download_url": "https://github.com/Chalwk/NC-Halo-Maps/releases/download/TEST-1.0.0/TEST.zip",
+        "content_type": "application/x-zip-compressed"
       }
     ]
   }
