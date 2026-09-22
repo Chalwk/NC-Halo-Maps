@@ -1,12 +1,12 @@
 [
   {
     "id": 394166399,
-    "tag": "CE",
+    "tag": "CE1",
     "name": "[CE] Frozen Beaver Creek",
     "body": "",
     "prerelease": false,
     "published_at": "2026-09-22T23:21:43Z",
-    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/CE",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/CE1",
     "games": [
       "CE"
     ],
@@ -17,7 +17,7 @@
         "size": 305430229,
         "size_human": "291 MB",
         "download_count": 1,
-        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE/frozen_beaver_creek.map",
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE1/frozen_beaver_creek.map",
         "content_type": "application/octet-stream"
       }
     ]
