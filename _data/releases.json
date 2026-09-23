@@ -1,5 +1,28 @@
 [
   {
+    "id": 394762731,
+    "tag": "PC-SUMMER-TUMULUS",
+    "name": "[PC]SUMMER-TUMULUS",
+    "body": "TUMULUS SUMMERTIME FOR HALO PC",
+    "prerelease": false,
+    "published_at": "2026-09-23T14:47:06Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC-SUMMER-TUMULUS",
+    "games": [
+      "PC"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "summer_of_tumulus_1.rar",
+        "size": 41201448,
+        "size_human": "39 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-SUMMER-TUMULUS/summer_of_tumulus_1.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394761398,
     "tag": "PC-SNOW-VALLEY",
     "name": "[PC]SNOW-VALLEY",
