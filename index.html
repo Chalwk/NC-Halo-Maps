@@ -9,6 +9,17 @@ title: Home
   Site Developer: https://github.com/Chalwk/
 -->
 
+{% assign all_releases = site.data.releases %}
+{%- comment -%}
+  Total downloads across every map, for the stats strip below.
+{%- endcomment -%}
+{% assign site_total_downloads = 0 %}
+{% for release in all_releases %}
+    {% for asset in release.assets %}
+        {% assign site_total_downloads = site_total_downloads | plus: asset.download_count %}
+    {% endfor %}
+{% endfor %}
+
 <div class="hero">
     <i aria-hidden="true" class="fas fa-map hero-icon"></i>
     <h2>Welcome to NC Halo Maps</h2>
@@ -23,6 +34,23 @@ title: Home
             <i class="fab fa-github"></i> View on GitHub
         </a>
     </div>
+    <p class="hero-feedback">
+        Found a bug or have feedback on a map? <a class="rules-link" href="{{ site.links.issues }}" rel="noopener"
+            target="_blank">Open an issue</a> and let NakedChick know.
+    </p>
+    {% if all_releases.size > 0 %}
+    <div class="site-stats">
+        <div class="stat">
+            <span class="stat-number">{{ all_releases.size }}</span>
+            <span class="stat-label">Map{% if all_releases.size != 1 %}s{% endif %} Released</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+            <span class="stat-number">{{ site_total_downloads }}</span>
+            <span class="stat-label">Total Downloads</span>
+        </div>
+    </div>
+    {% endif %}
 </div>
 
 <h2><i class="fas fa-scroll"></i> About the Cartographer</h2>
@@ -35,20 +63,61 @@ title: Home
 </div>
 
 <h2><i class="fas fa-star"></i> Latest Releases</h2>
-{% assign latest = site.data.releases | sort: 'published_at' | reverse | slice: 0, 3 %}
+{% assign latest = all_releases | sort: 'published_at' | reverse | slice: 0, 3 %}
 {% if latest.size > 0 %}
 <div class="feature-grid">
     {% for item in latest %}
-    <div class="feature-item">
-        {% if item.thumbnail %}
-        <img alt="{{ item.name }} preview" class="feature-thumb" loading="lazy" src="{{ item.thumbnail }}">
-        {% else %}
-        <i class="fas fa-map feature-icon"></i>
+    {%- comment -%}
+      Strip a leading [PC] / [CE] / [PC+CE] / [CE+PC] marker from the
+      displayed title, same as the maps page, e.g.
+      "[CE] Liberty Hangar" -> "Liberty Hangar".
+    {%- endcomment -%}
+    {% assign item_name = item.name %}
+    {% assign item_name_parts = item.name | split: ']' %}
+    {% if item_name_parts.size > 1 %}
+        {% assign item_tag_candidate = item_name_parts[0] | append: ']' | upcase %}
+        {% if item_tag_candidate contains '[PC' or item_tag_candidate contains '[CE' %}
+            {% assign item_remaining_parts = item_name_parts | slice: 1, item_name_parts.size %}
+            {% assign item_name = item_remaining_parts | join: ']' | strip %}
+            {% if item_name == '' %}
+                {% assign item_name = item.name %}
+            {% endif %}
         {% endif %}
-        <h3>{{ item.name }}</h3>
+    {% endif %}
+
+    {%- comment -%}
+      Total downloads for this one release, summed across its attached files.
+    {%- endcomment -%}
+    {% assign item_downloads = 0 %}
+    {% for asset in item.assets %}
+        {% assign item_downloads = item_downloads | plus: asset.download_count %}
+    {% endfor %}
+
+    <a class="feature-item" href="{{ site.baseurl }}/maps#release-{{ item.id }}">
+        <div class="feature-thumb-wrap">
+            {% if item.thumbnail %}
+            <img alt="{{ item_name }} preview" class="feature-thumb" loading="lazy" src="{{ item.thumbnail }}">
+            {% else %}
+            <i class="fas fa-map feature-icon"></i>
+            {% endif %}
+            {% if item.games.size > 0 %}
+            <span
+                class="badge badge-game badge-game-{{ item.games | first | downcase }}{% if item.games.size > 1 %} badge-game-both{% endif %}">
+                {% if item.games.size > 1 %}PC + CE{% elsif item.games.first == 'PC' %}PC{% else %}CE{% endif %}
+            </span>
+            {% endif %}
+            {% if item.prerelease %}
+            <span class="badge badge-prerelease">Beta</span>
+            {% endif %}
+        </div>
+        <h3>{{ item_name }}</h3>
+        <p class="feature-meta">
+            <i class="fas fa-calendar"></i> {{ item.published_at | date: "%d %b %Y" }}
+            <span class="feature-downloads"><i class="fas fa-download"></i> {{ item_downloads }}</span>
+        </p>
         <p>{{ item.body | markdownify | strip_html | truncatewords: 20 }}</p>
-        <a class="btn btn-small" href="{{ site.baseurl }}/maps#release-{{ item.id }}">View Details</a>
-    </div>
+        <span aria-hidden="true" class="btn btn-small">View Details</span>
+    </a>
     {% endfor %}
 </div>
 {% else %}
@@ -57,19 +126,6 @@ title: Home
     <p>No maps published yet - check back soon!</p>
 </div>
 {% endif %}
-
-<div class="join-section">
-    <h3><i class="fas fa-circle-info"></i> How Downloads Work</h3>
-    <p>
-        Every map is published as a <a class="rules-link" href="{{ site.links.releases }}" rel="noopener"
-            target="_blank">GitHub Release</a>, complete with a description and the map files attached
-        directly - no third-party download sites, no ads, no waiting.
-    </p>
-    <p>
-        Found a bug or have feedback on a map? <a class="rules-link" href="{{ site.links.issues }}" rel="noopener"
-            target="_blank">Open an issue</a> and let NakedChick know.
-    </p>
-</div>
 
 <style>
     .hero {
@@ -113,6 +169,60 @@ title: Home
         margin-top: 2rem;
     }
 
+    .hero-feedback {
+        font-size: 0.95rem !important;
+        color: var(--text-muted);
+        margin-top: 1.5rem !important;
+    }
+
+    .rules-link {
+        font-weight: bold;
+        color: var(--primary);
+        text-decoration: none;
+    }
+
+    .rules-link:hover {
+        color: var(--accent);
+    }
+
+    .site-stats {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-glow);
+    }
+
+    .stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-number {
+        font-family: var(--font-header), serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-top: 0.4rem;
+    }
+
+    .stat-divider {
+        width: 1px;
+        height: 40px;
+        background: var(--border-glow);
+    }
+
     .about-panel {
         background: rgba(0, 0, 0, 0.2);
         border: 1px solid var(--border-glow);
@@ -143,6 +253,8 @@ title: Home
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-decoration: none;
+        color: inherit;
     }
 
     .feature-item:hover {
@@ -150,10 +262,20 @@ title: Home
         box-shadow: 0 0 15px var(--border-glow);
     }
 
+    .feature-thumb-wrap {
+        position: relative;
+        width: 100%;
+        max-width: 220px;
+        min-height: 124px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
     .feature-icon {
         font-size: 2.5rem;
         color: var(--primary);
-        margin-bottom: 1rem;
     }
 
     .feature-thumb {
@@ -163,13 +285,56 @@ title: Home
         object-fit: cover;
         border-radius: 10px;
         border: 1px solid var(--border-glow);
-        margin-bottom: 1rem;
+    }
+
+    .badge {
+        position: absolute;
+        top: 0.5rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 999px;
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #fff;
+    }
+
+    .badge-prerelease {
+        right: 0.5rem;
+        background: var(--accent);
+    }
+
+    .badge-game {
+        left: 0.5rem;
+    }
+
+    .badge-game-pc {
+        background: #4a7c9e;
+    }
+
+    .badge-game-ce {
+        background: #6a8f4a;
+    }
+
+    .badge-game-both {
+        background: linear-gradient(90deg, #4a7c9e 50%, #6a8f4a 50%);
     }
 
     .feature-item h3 {
         font-size: 1.4rem;
-        margin-bottom: 0.6rem;
+        margin-bottom: 0.4rem;
         color: var(--accent);
+    }
+
+    .feature-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.2rem 0.8rem;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin-bottom: 0.6rem;
     }
 
     .feature-item p {
@@ -193,39 +358,6 @@ title: Home
         color: var(--primary);
     }
 
-    .join-section {
-        text-align: center;
-        background: rgba(0, 0, 0, 0.25);
-        border: 1px solid var(--border-glow);
-        border-radius: 24px;
-        padding: 2.25rem;
-        margin: 2rem 0 1rem;
-    }
-
-    .join-section h3 {
-        font-size: 1.7rem;
-        color: var(--accent);
-        margin-bottom: 1rem;
-    }
-
-    .join-section p {
-        color: var(--text-light);
-        margin-bottom: 1rem;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .join-section .rules-link {
-        font-weight: bold;
-        color: var(--primary);
-        text-decoration: none;
-    }
-
-    .join-section .rules-link:hover {
-        color: var(--accent);
-    }
-
     @media (max-width: 700px) {
         .hero h2 {
             font-size: 2rem;
@@ -237,6 +369,14 @@ title: Home
 
         .hero {
             padding: 2rem 1rem;
+        }
+
+        .site-stats {
+            gap: 1.25rem;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
         }
     }
 </style>
