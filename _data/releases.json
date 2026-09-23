@@ -1,5 +1,28 @@
 [
   {
+    "id": 394838680,
+    "tag": "CE-TSCE-V2",
+    "name": "[CE]TSCE-V2",
+    "body": "TSCE V2 FOR HALO CE",
+    "prerelease": false,
+    "published_at": "2026-09-23T16:13:17Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/CE-TSCE-V2",
+    "games": [
+      "CE"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "tsce_v2.rar",
+        "size": 98787122,
+        "size_human": "94 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-TSCE-V2/tsce_v2.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394838004,
     "tag": "CE-SUMMER-ICE",
     "name": "[CE]SUMMER-ICE",
