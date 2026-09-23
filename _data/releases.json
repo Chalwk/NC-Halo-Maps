@@ -1,5 +1,28 @@
 [
   {
+    "id": 394736877,
+    "tag": "PC-FROZEN-BEAVERCREEK-1",
+    "name": "[PC]FROZEN-BEAVERCREEK-1",
+    "body": "BEAVERCREEK FROZEN FOR PC",
+    "prerelease": false,
+    "published_at": "2026-09-23T14:19:29Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC-FROZEN-BEAVERCREEK-1",
+    "games": [
+      "PC"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "frozen_beaver_creek_1.rar",
+        "size": 121756170,
+        "size_human": "116 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-FROZEN-BEAVERCREEK-1/frozen_beaver_creek_1.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394735492,
     "tag": "PC-CARGO-BAY-1",
     "name": "[PC]CARGO-BAY-1",
