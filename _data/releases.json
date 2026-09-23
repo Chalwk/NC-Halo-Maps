@@ -1,5 +1,28 @@
 [
   {
+    "id": 394735492,
+    "tag": "PC-CARGO-BAY-1",
+    "name": "[PC]CARGO-BAY-1",
+    "body": "STAR WARS BATTLE IN THE CARGO BAY FOR HALO PC",
+    "prerelease": false,
+    "published_at": "2026-09-23T14:17:55Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC-CARGO-BAY-1",
+    "games": [
+      "PC"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "Cargo_Bay_1.rar",
+        "size": 61457804,
+        "size_human": "59 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-CARGO-BAY-1/Cargo_Bay_1.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394733969,
     "tag": "PC-A-SNOWY-BIGASS-PC",
     "name": "[PC]A-SNOWY-BIGASS-PC",
