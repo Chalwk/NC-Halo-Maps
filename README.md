@@ -35,22 +35,18 @@ for example `[CE] Liberty Hangar`, so the site knows which game the map is for. 
 few hours (or immediately if you run the "Fetch Releases Data" workflow manually from the
 Actions tab) it'll appear on the Maps page.
 
-**Optional, but helpful**: dropping a screenshot into the release notes (drag-and-drop an image into the
-GitHub release description) will automatically be used as the map's thumbnail. You can also
-attach an image file directly to the release for the same effect.
+**Map Thumbnails:**
 
-For the best results, thumbnails should be a **16:9 image**. The card thumbnails on the
-Maps page and in the "Latest Releases" section on the home page are both rendered in a 16:9
-box with `object-fit: cover`, so a 16:9 image fits perfectly with nothing cropped.
+The site shows them in a `16:9` box on both the maps page and the home page's latest releases section.
+So make your thumbnail `16:9` too.
 
-**Recommended size: 1280 x 720 pixels.** Up to 1920 x 1080 is fine for extra resolution,
-but there is no visible benefit going any larger, since the site displays them small.
+The best size is `1280x720`. Up to `1920x1080` is fine, but no bigger since it displays small.
+If the image is square or `4:3`, it will be cropped to fit, so keep the main part of the screenshot in the middle.
 
-If the image is square or 4:3 it will be cropped to fill the box, so keep the important
-part of the screenshot (the map itself, the action) in the centre of the frame.
+Keep file size small, under a few hundred KB if you can. The workflow accepts `PNG`, `JPG`, `JPEG`, `GIF`, or `WEBP`.
+To add one, drag and drop it into the release description on GitHub, or attach it as a release asset.
 
-Keep the file size under a few hundred KB where possible, so the pages stay fast. Accepted
-formats are PNG, JPG, JPEG, GIF, and WEBP.
+If you attach it as an asset, the site uses it as the thumbnail and does not show it as a download button.
 
 ---
 
