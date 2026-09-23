@@ -1,5 +1,28 @@
 [
   {
+    "id": 394817249,
+    "tag": "CE-LIBERTY-DOWNTOWN",
+    "name": "[CE]LIBERTY-DOWNTOWN",
+    "body": "LIBERTY DOWNTOWN FOR HALO CE",
+    "prerelease": false,
+    "published_at": "2026-09-23T15:47:43Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/CE-LIBERTY-DOWNTOWN",
+    "games": [
+      "CE"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_downtown.rar",
+        "size": 75759201,
+        "size_human": "72 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-DOWNTOWN/liberty_downtown.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394814388,
     "tag": "CE-LIBERTY-DODGEBALL",
     "name": "[CE]LIBERTY-DODGEBALL",
