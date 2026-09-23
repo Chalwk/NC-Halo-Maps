@@ -1,5 +1,28 @@
 [
   {
+    "id": 394798642,
+    "tag": "CE-LIBERTY-APARTMENTS",
+    "name": "[CE]LIBERTY-APARTMENTS",
+    "body": "APARTMENT LIVING FOR LIBERTY CLAN FOR HALO CE",
+    "prerelease": false,
+    "published_at": "2026-09-23T15:26:26Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/CE-LIBERTY-APARTMENTS",
+    "games": [
+      "CE"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_apartments.rar",
+        "size": 28741234,
+        "size_human": "27 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-APARTMENTS/liberty_apartments.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394795639,
     "tag": "CE-CARGO-BAY",
     "name": "[CE]CARGO-BAY",
