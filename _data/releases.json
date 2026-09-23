@@ -1,5 +1,28 @@
 [
   {
+    "id": 394836330,
+    "tag": "CE-SNOW-VALLEY",
+    "name": "[CE]SNOW-VALLEY",
+    "body": "SNOW VALLEY FOR HALO CE",
+    "prerelease": false,
+    "published_at": "2026-09-23T16:10:26Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/CE-SNOW-VALLEY",
+    "games": [
+      "CE"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "snow_valley_ce.rar",
+        "size": 49684044,
+        "size_human": "47 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-SNOW-VALLEY/snow_valley_ce.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394835529,
     "tag": "CE-SELENIUM",
     "name": "[CE]SELENIUM",
