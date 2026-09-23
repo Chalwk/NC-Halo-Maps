@@ -1,5 +1,28 @@
 [
   {
+    "id": 394760479,
+    "tag": "PC-LIBERTY-TRENCHFOOT",
+    "name": "[PC]LIBERTY-TRENCHFOOT",
+    "body": "LIBERTY TRENCHFOOT WAR TIMES",
+    "prerelease": false,
+    "published_at": "2026-09-23T14:44:43Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC-LIBERTY-TRENCHFOOT",
+    "games": [
+      "PC"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "Liberty_Trenchfoot_1.rar",
+        "size": 63703933,
+        "size_human": "61 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-TRENCHFOOT/Liberty_Trenchfoot_1.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394759319,
     "tag": "PC-PRISON-BREAK",
     "name": "[PC]LIBERTY-PRISON-BREAK",
