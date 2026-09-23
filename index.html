@@ -10,14 +10,11 @@ title: Home
 -->
 
 {% assign all_releases = site.data.releases %}
-{%- comment -%}
-  Total downloads across every map, for the stats strip below.
-{%- endcomment -%}
 {% assign site_total_downloads = 0 %}
 {% for release in all_releases %}
-    {% for asset in release.assets %}
-        {% assign site_total_downloads = site_total_downloads | plus: asset.download_count %}
-    {% endfor %}
+{% for asset in release.assets %}
+{% assign site_total_downloads = site_total_downloads | plus: asset.download_count %}
+{% endfor %}
 {% endfor %}
 
 <div class="hero">
@@ -67,30 +64,22 @@ title: Home
 {% if latest.size > 0 %}
 <div class="feature-grid">
     {% for item in latest %}
-    {%- comment -%}
-      Strip a leading [PC] / [CE] / [PC+CE] / [CE+PC] marker from the
-      displayed title, same as the maps page, e.g.
-      "[CE] Liberty Hangar" -> "Liberty Hangar".
-    {%- endcomment -%}
     {% assign item_name = item.name %}
     {% assign item_name_parts = item.name | split: ']' %}
     {% if item_name_parts.size > 1 %}
-        {% assign item_tag_candidate = item_name_parts[0] | append: ']' | upcase %}
-        {% if item_tag_candidate contains '[PC' or item_tag_candidate contains '[CE' %}
-            {% assign item_remaining_parts = item_name_parts | slice: 1, item_name_parts.size %}
-            {% assign item_name = item_remaining_parts | join: ']' | strip %}
-            {% if item_name == '' %}
-                {% assign item_name = item.name %}
-            {% endif %}
-        {% endif %}
+    {% assign item_tag_candidate = item_name_parts[0] | append: ']' | upcase %}
+    {% if item_tag_candidate contains '[PC' or item_tag_candidate contains '[CE' %}
+    {% assign item_remaining_parts = item_name_parts | slice: 1, item_name_parts.size %}
+    {% assign item_name = item_remaining_parts | join: ']' | strip %}
+    {% if item_name == '' %}
+    {% assign item_name = item.name %}
+    {% endif %}
+    {% endif %}
     {% endif %}
 
-    {%- comment -%}
-      Total downloads for this one release, summed across its attached files.
-    {%- endcomment -%}
     {% assign item_downloads = 0 %}
     {% for asset in item.assets %}
-        {% assign item_downloads = item_downloads | plus: asset.download_count %}
+    {% assign item_downloads = item_downloads | plus: asset.download_count %}
     {% endfor %}
 
     <a class="feature-item" href="{{ site.baseurl }}/maps#release-{{ item.id }}">
@@ -101,9 +90,8 @@ title: Home
             <i class="fas fa-map feature-icon"></i>
             {% endif %}
             {% if item.games.size > 0 %}
-            <span
-                class="badge badge-game badge-game-{{ item.games | first | downcase }}{% if item.games.size > 1 %} badge-game-both{% endif %}">
-                {% if item.games.size > 1 %}PC + CE{% elsif item.games.first == 'PC' %}PC{% else %}CE{% endif %}
+            <span class="badge badge-game badge-game-{{ item.games | first | downcase }}">
+                {% if item.games.first == 'PC' %}PC{% else %}CE{% endif %}
             </span>
             {% endif %}
             {% if item.prerelease %}
@@ -314,10 +302,6 @@ title: Home
 
     .badge-game-ce {
         background: #6a8f4a;
-    }
-
-    .badge-game-both {
-        background: linear-gradient(90deg, #4a7c9e 50%, #6a8f4a 50%);
     }
 
     .feature-item h3 {

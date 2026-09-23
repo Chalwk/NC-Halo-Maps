@@ -22,13 +22,13 @@ columns: 3
 {% assign releases = site.data.releases | sort: 'published_at' | reverse %}
 
 {%- comment -%}
-  Total downloads across every map, for the toolbar summary.
+Total downloads across every map, for the toolbar summary.
 {%- endcomment -%}
 {% assign site_total_downloads = 0 %}
 {% for release in releases %}
-    {% for asset in release.assets %}
-        {% assign site_total_downloads = site_total_downloads | plus: asset.download_count %}
-    {% endfor %}
+{% for asset in release.assets %}
+{% assign site_total_downloads = site_total_downloads | plus: asset.download_count %}
+{% endfor %}
 {% endfor %}
 
 <div class="maps-toolbar">
@@ -59,31 +59,25 @@ columns: 3
 <div class="maps-grid" data-per-page="{{ page.per_page | default: 0 }}" id="maps-grid"
     style="--maps-columns: {{ page.columns | default: 3 }};">
     {% for release in releases %}
-    {%- comment -%}
-      Strip a leading [PC] / [CE] / [PC+CE] / [CE+PC] marker (or any other
-      bracketed tag containing PC or CE) from the displayed title, e.g.
-      "[CE] Liberty Hangar" -> "Liberty Hangar". The marker is still used
-      for filtering/badges via release.games, it's just hidden from the title.
-    {%- endcomment -%}
     {% assign display_name = release.name %}
     {% assign name_parts = release.name | split: ']' %}
     {% if name_parts.size > 1 %}
-        {% assign tag_candidate = name_parts[0] | append: ']' | upcase %}
-        {% if tag_candidate contains '[PC' or tag_candidate contains '[CE' %}
-            {% assign remaining_parts = name_parts | slice: 1, name_parts.size %}
-            {% assign display_name = remaining_parts | join: ']' | strip %}
-            {% if display_name == '' %}
-                {% assign display_name = release.name %}
-            {% endif %}
-        {% endif %}
+    {% assign tag_candidate = name_parts[0] | append: ']' | upcase %}
+    {% if tag_candidate contains '[PC' or tag_candidate contains '[CE' %}
+    {% assign remaining_parts = name_parts | slice: 1, name_parts.size %}
+    {% assign display_name = remaining_parts | join: ']' | strip %}
+    {% if display_name == '' %}
+    {% assign display_name = release.name %}
+    {% endif %}
+    {% endif %}
     {% endif %}
 
     {%- comment -%}
-      Total downloads for this one release, summed across its attached files.
+    Total downloads for this one release, summed across its attached files.
     {%- endcomment -%}
     {% assign total_downloads = 0 %}
     {% for asset in release.assets %}
-        {% assign total_downloads = total_downloads | plus: asset.download_count %}
+    {% assign total_downloads = total_downloads | plus: asset.download_count %}
     {% endfor %}
 
     <article class="map-card" data-downloads="{{ total_downloads }}" data-games="{{ release.games | join: ',' }}"
@@ -96,9 +90,8 @@ columns: 3
             <i class="fas fa-map"></i>
             {% endif %}
             {% if release.games.size > 0 %}
-            <span
-                class="badge badge-game badge-game-{{ release.games | first | downcase }}{% if release.games.size > 1 %} badge-game-both{% endif %}">
-                {% if release.games.size > 1 %}PC + CE{% elsif release.games.first == 'PC' %}PC{% else %}CE{% endif %}
+            <span class="badge badge-game badge-game-{{ release.games | first | downcase }}">
+                {% if release.games.first == 'PC' %}PC{% else %}CE{% endif %}
             </span>
             {% endif %}
             {% if release.prerelease %}
@@ -356,10 +349,6 @@ columns: 3
 
     .badge-game-ce {
         background: #6a8f4a;
-    }
-
-    .badge-game-both {
-        background: linear-gradient(90deg, #4a7c9e 50%, #6a8f4a 50%);
     }
 
     .map-body {

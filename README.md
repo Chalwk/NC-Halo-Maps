@@ -35,32 +35,22 @@ for example `[CE] Liberty Hangar`, so the site knows which game the map is for. 
 few hours (or immediately if you run the "Fetch Releases Data" workflow manually from the
 Actions tab) it'll appear on the Maps page.
 
-### Tagging releases by game
-
-The Maps page has an "All / Combat Evolved / Custom Edition" filter, and each map card
-shows a `PC` or `CE` badge. Which one it gets is decided by `detectGames()` in the fetch
-workflow, which checks, in order:
-
-| Priority | Source                                                                            | Example                                    |
-| -------- | --------------------------------------------------------------------------------- | ------------------------------------------ |
-| 1        | Exact tag match                                                                   | `PC`, `CE`, `PC+CE`, `CE+PC`               |
-| 2        | Bracket in the release title                                                      | `[CE] Liberty Hangar`, `[PC+CE] Crossover` |
-| 3        | "Custom Edition" / "Combat Evolved" / `CE` / `PC` anywhere in title, tag, or body | `Halo CE remake of...`                     |
-| 4        | Fallback                                                                          | Defaults to `CE`                           |
-
-The recommended convention is priority 2: **always start the release title with `[PC]` or
-`[CE]`.** GitHub requires every release tag to be unique, so you cannot tag multiple
-releases `CE` - but the `[CE]` / `[PC]` marker in the title works every time, and the
-release's tag itself can be anything (a map name, a version number, and so on).
-
-**Note:** if the marker is missing from the title and nothing else in the release mentions
-the game, the release will silently be classified as Custom Edition. If that happens, edit
-the release and add `[PC]` or `[CE]` to the title, then run the "Fetch Releases Data"
-workflow again.
-
 **Optional, but helpful**: dropping a screenshot into the release notes (drag-and-drop an image into the
 GitHub release description) will automatically be used as the map's thumbnail. You can also
 attach an image file directly to the release for the same effect.
+
+For the best results, thumbnails should be a **16:9 image**. The card thumbnails on the
+Maps page and in the "Latest Releases" section on the home page are both rendered in a 16:9
+box with `object-fit: cover`, so a 16:9 image fits perfectly with nothing cropped.
+
+**Recommended size: 1280 x 720 pixels.** Up to 1920 x 1080 is fine for extra resolution,
+but there is no visible benefit going any larger, since the site displays them small.
+
+If the image is square or 4:3 it will be cropped to fill the box, so keep the important
+part of the screenshot (the map itself, the action) in the centre of the frame.
+
+Keep the file size under a few hundred KB where possible, so the pages stay fast. Accepted
+formats are PNG, JPG, JPEG, GIF, and WEBP.
 
 ---
 

@@ -12,13 +12,13 @@ name: Fetch Releases Data
 # unauthenticated public rate limit (60 requests/hour) ever being hit.
 #
 # Each release is classified by game using the detectGames() helper below:
-#   1. Exact tag match:   "PC"  "CE"  "PC+CE"  "CE+PC"
-#   2. Bracket in title:  "[CE] My Map", "[PC+CE] Crossover"
-#   3. Body/title text:   "Custom Edition", "Combat Evolved", "CE", "PC"
-#   4. Fallback:          DEFAULT_GAME
+#   1. Exact tag match:   "PC"  "CE"
+#   2. Bracket in title:  "[CE] My Map", "[PC] My Map"
+#   3. Fallback:          DEFAULT_GAME
 #
-# Every release gets a `games` array, even if empty tags are used, so the
-# Maps page can always render a PC / CE badge for it.
+# Every release gets a `games` array (containing exactly one entry, since a
+# map can only be for one game), so the Maps page can always render a
+# PC / CE badge for it.
 
 on:
   schedule:
@@ -79,29 +79,19 @@ jobs:
               // Primary path: releases are tagged exactly "PC" or "CE".
               if (tag === 'PC') return ['PC'];
               if (tag === 'CE') return ['CE'];
-              if (tag === 'PC+CE' || tag === 'CE+PC') return ['PC', 'CE'];
 
               // Fallback for older/odd releases that don't use a plain tag.
+              // Look for a [PC] or [CE] bracket anywhere in the release title.
               const title = release.name || '';
-              const body = release.body || '';
-              const haystack = `${title}\n${release.tag_name || ''}\n${body}`;
-              const games = new Set();
-
               const bracketMatches = title.match(/\[[^\]]+\]/g) || [];
-              bracketMatches.forEach(raw => {
+              for (const raw of bracketMatches) {
                 const token = raw.toUpperCase();
-                if (/\bPC\b/.test(token) || /COMBAT EVOLVED/.test(token)) games.add('PC');
-                if (/\bCE\b/.test(token) || /CUSTOM EDITION/.test(token)) games.add('CE');
-              });
-
-              if (games.size === 0) {
-                if (/\bcustom edition\b|\bCE\b/i.test(haystack)) games.add('CE');
-                if (/\bcombat evolved\b|\bPC\b/i.test(haystack)) games.add('PC');
+                if (/\bPC\b/.test(token) || /COMBAT EVOLVED/.test(token)) return ['PC'];
+                if (/\bCE\b/.test(token) || /CUSTOM EDITION/.test(token)) return ['CE'];
               }
 
-              if (games.size === 0) games.add(DEFAULT_GAME);
-
-              return ['PC', 'CE'].filter(g => games.has(g));
+              // Fallback: default game if no tag or bracket marker was found.
+              return [DEFAULT_GAME];
             }
 
             const IMAGE_RE = /\.(png|jpe?g|gif|webp)$/i;
