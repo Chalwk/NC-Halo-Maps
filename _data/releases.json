@@ -1,5 +1,28 @@
 [
   {
+    "id": 394746714,
+    "tag": "PC-LIBERTY-CLAN-PROVING-GROUNDS",
+    "name": "[PC]LIBERTY-PROVING-GROUNDS",
+    "body": "PROVING GROUNDS FOR LIBERTY CLAN",
+    "prerelease": false,
+    "published_at": "2026-09-23T14:29:45Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC-LIBERTY-CLAN-PROVING-GROUNDS",
+    "games": [
+      "PC"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_clan_proving_grounds_1.rar",
+        "size": 23400175,
+        "size_human": "22 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-CLAN-PROVING-GROUNDS/liberty_clan_proving_grounds_1.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394744829,
     "tag": "PC-LIBERTY-CLAN-HQ",
     "name": "PC-LIBERTY-CLAN-HQ",
