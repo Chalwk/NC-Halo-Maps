@@ -307,12 +307,17 @@ Total downloads across every map, for the toolbar summary.
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
     }
 
     .map-thumb img {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
+        display: block;
     }
 
     .map-thumb i {
@@ -330,6 +335,7 @@ Total downloads across every map, for the toolbar summary.
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.05em;
+        z-index: 1;
     }
 
     .badge-prerelease {
