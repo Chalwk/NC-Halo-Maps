@@ -1,5 +1,28 @@
 [
   {
+    "id": 394811115,
+    "tag": "CE-LIBERTY-DEAGLE",
+    "name": "[CE]LIBERTY-DEAGLE",
+    "body": "LIBERTY DEAGLE FOR HALO CE",
+    "prerelease": false,
+    "published_at": "2026-09-23T15:42:04Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/CE-LIBERTY-DEAGLE",
+    "games": [
+      "CE"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "Liberty_Deagle.rar",
+        "size": 11868751,
+        "size_human": "11 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-DEAGLE/Liberty_Deagle.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394809807,
     "tag": "CE-LIBERTY-CLAN-PROVING-GROUNDS",
     "name": "[CE]LIBERTY-CLAN-PROVING-GROUNDS",
