@@ -14,20 +14,6 @@
     "assets": []
   },
   {
-    "id": 395027055,
-    "tag": "PC",
-    "name": "TEST",
-    "body": "TEST",
-    "prerelease": false,
-    "published_at": "2026-09-23T20:20:12Z",
-    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC",
-    "games": [
-      "PC"
-    ],
-    "thumbnail": null,
-    "assets": []
-  },
-  {
     "id": 394894655,
     "tag": "PC-LIBERTY-FOUNDRY",
     "name": "[PC] LIBERTY-FOUNDRY",
