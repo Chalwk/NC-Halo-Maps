@@ -1,5 +1,28 @@
 [
   {
+    "id": 394825714,
+    "tag": "CE-LIBERTY-MERMAID-PLAZA",
+    "name": "[CE]LIBERTY-MERMAID-PLAZA",
+    "body": "LIBERTY MERMAID PLAZA FOR HALO CE",
+    "prerelease": false,
+    "published_at": "2026-09-23T16:00:43Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/CE-LIBERTY-MERMAID-PLAZA",
+    "games": [
+      "CE"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_mermaid_plaza.rar",
+        "size": 28611079,
+        "size_human": "27 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-MERMAID-PLAZA/liberty_mermaid_plaza.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394824182,
     "tag": "CE-LIBERTY-LAST-VOYAGE",
     "name": "[CE]LIBERTY-LAST-VOYAGE",
@@ -154,7 +177,7 @@
         "name": "liberty_dodgeball.rar",
         "size": 42814412,
         "size_human": "41 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-DODGEBALL/liberty_dodgeball.rar",
         "content_type": "application/x-compressed"
       }
