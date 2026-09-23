@@ -1,5 +1,28 @@
 [
   {
+    "id": 394744829,
+    "tag": "PC-LIBERTY-CLAN-HQ",
+    "name": "PC-LIBERTY-CLAN-HQ",
+    "body": "LIBERTY CLAN HQ FOR PC",
+    "prerelease": false,
+    "published_at": "2026-09-23T14:27:44Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC-LIBERTY-CLAN-HQ",
+    "games": [
+      "PC"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_clan_hq_1.rar",
+        "size": 34377885,
+        "size_human": "33 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-CLAN-HQ/liberty_clan_hq_1.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394743836,
     "tag": "PC-LIBERTY-BLOOD-COVENANT",
     "name": "[PC]BLOOD-COVENANT",
