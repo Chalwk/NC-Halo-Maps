@@ -1,5 +1,28 @@
 [
   {
+    "id": 394757977,
+    "tag": "PC-LIBERTY-NIGHTGLOW",
+    "name": "[PC]LIBERTY-NIGHTGLOW",
+    "body": "LIBERTY NIGHTGLOW FOR HALO PC",
+    "prerelease": false,
+    "published_at": "2026-09-23T14:41:57Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC-LIBERTY-NIGHTGLOW",
+    "games": [
+      "PC"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_nightglow_1.rar",
+        "size": 18197021,
+        "size_human": "17 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-NIGHTGLOW/liberty_nightglow_1.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394756862,
     "tag": "PC-LIBERTY-MGULCH",
     "name": "[PC]LIBERTY-MGULCH",
