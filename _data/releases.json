@@ -1,5 +1,28 @@
 [
   {
+    "id": 394834803,
+    "tag": "CE-PRISON-BREAK",
+    "name": "[CE]PRISON-BREAK",
+    "body": "PRISON BREAK FOR HALO CE",
+    "prerelease": false,
+    "published_at": "2026-09-23T16:08:33Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/CE-PRISON-BREAK",
+    "games": [
+      "CE"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "prison_break.rar",
+        "size": 18948881,
+        "size_human": "18 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-PRISON-BREAK/prison_break.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394833917,
     "tag": "CE-LIBERTY-CURSED-WYNDER",
     "name": "[CE]LIBERTY-CURSED-WYNDER",
