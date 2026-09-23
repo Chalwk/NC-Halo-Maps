@@ -1,5 +1,28 @@
 [
   {
+    "id": 394893853,
+    "tag": "PC-LIBERTY-CURSED-WYNDER",
+    "name": "[PC]LIBERTY-CURSED-WYNDER",
+    "body": "LIBERTY CURSED WYNDER FOR HALO PC",
+    "prerelease": false,
+    "published_at": "2026-09-23T17:21:33Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC-LIBERTY-CURSED-WYNDER",
+    "games": [
+      "PC"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty-cursed-wynder_1.rar",
+        "size": 9521104,
+        "size_human": "9.1 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-CURSED-WYNDER/liberty-cursed-wynder_1.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394838680,
     "tag": "CE-TSCE-V2",
     "name": "[CE]TSCE-V2",
