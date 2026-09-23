@@ -1,5 +1,28 @@
 [
   {
+    "id": 394759319,
+    "tag": "PC-PRISON-BREAK",
+    "name": "[PC]LIBERTY-PRISON-BREAK",
+    "body": "LIBERTY-PRISON BREAK FOR HALO PC",
+    "prerelease": false,
+    "published_at": "2026-09-23T14:43:29Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC-PRISON-BREAK",
+    "games": [
+      "PC"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_prison_break_1.rar",
+        "size": 88493378,
+        "size_human": "84 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-PRISON-BREAK/liberty_prison_break_1.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394757977,
     "tag": "PC-LIBERTY-NIGHTGLOW",
     "name": "[PC]LIBERTY-NIGHTGLOW",
