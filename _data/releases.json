@@ -1,5 +1,28 @@
 [
   {
+    "id": 394740786,
+    "tag": "PC-LIBERTY-ARRIVAL",
+    "name": "[PC]LIBERTY-ARRIVAL",
+    "body": "ARRIVAL FOR LIBERTY CLAN",
+    "prerelease": false,
+    "published_at": "2026-09-23T14:23:36Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC-LIBERTY-ARRIVAL",
+    "games": [
+      "PC"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_arrival_1.rar",
+        "size": 24816760,
+        "size_human": "24 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-ARRIVAL/liberty_arrival_1.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394739733,
     "tag": "PC-LIBERTY-APARTMENTS",
     "name": "[PC]LIBERTY-APARTMENTS",
