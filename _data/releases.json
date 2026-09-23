@@ -1,5 +1,28 @@
 [
   {
+    "id": 394761398,
+    "tag": "PC-SNOW-VALLEY",
+    "name": "[PC]SNOW-VALLEY",
+    "body": "SNOW VALLEY FOR HALO PC",
+    "prerelease": false,
+    "published_at": "2026-09-23T14:45:41Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC-SNOW-VALLEY",
+    "games": [
+      "PC"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "snow_valley_pc.rar",
+        "size": 49057238,
+        "size_human": "47 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-SNOW-VALLEY/snow_valley_pc.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394760479,
     "tag": "PC-LIBERTY-TRENCHFOOT",
     "name": "[PC]LIBERTY-TRENCHFOOT",
