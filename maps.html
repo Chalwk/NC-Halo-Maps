@@ -2,6 +2,8 @@
 layout: default
 title: Maps
 description: "Browse and download all custom Halo: PC/CE maps by NakedChick."
+per_page: 9
+columns: 3
 ---
 
 <!--
@@ -33,13 +35,33 @@ description: "Browse and download all custom Halo: PC/CE maps by NakedChick."
 </div>
 
 {% if releases.size > 0 %}
-<div class="maps-grid" id="maps-grid">
+<div class="maps-grid" data-per-page="{{ page.per_page | default: 0 }}" id="maps-grid"
+    style="--maps-columns: {{ page.columns | default: 3 }};">
     {% for release in releases %}
-    <article class="map-card" data-games="{{ release.games | join: ',' }}" data-name="{{ release.name | downcase }}"
+    {%- comment -%}
+      Strip a leading [PC] / [CE] / [PC+CE] / [CE+PC] marker (or any other
+      bracketed tag containing PC or CE) from the displayed title, e.g.
+      "[CE] Liberty Hangar" -> "Liberty Hangar". The marker is still used
+      for filtering/badges via release.games, it's just hidden from the title.
+    {%- endcomment -%}
+    {% assign display_name = release.name %}
+    {% assign name_parts = release.name | split: ']' %}
+    {% if name_parts.size > 1 %}
+        {% assign tag_candidate = name_parts[0] | append: ']' | upcase %}
+        {% if tag_candidate contains '[PC' or tag_candidate contains '[CE' %}
+            {% assign remaining_parts = name_parts | slice: 1, name_parts.size %}
+            {% assign display_name = remaining_parts | join: ']' | strip %}
+            {% if display_name == '' %}
+                {% assign display_name = release.name %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    <article class="map-card" data-games="{{ release.games | join: ',' }}" data-name="{{ display_name | downcase }}"
         id="release-{{ release.id }}">
         <div class="map-thumb">
             {% if release.thumbnail %}
-            <img alt="{{ release.name }} preview" loading="lazy" src="{{ release.thumbnail }}">
+            <img alt="{{ display_name }} preview" loading="lazy" src="{{ release.thumbnail }}">
             {% else %}
             <i class="fas fa-map"></i>
             {% endif %}
@@ -55,7 +77,7 @@ description: "Browse and download all custom Halo: PC/CE maps by NakedChick."
         </div>
 
         <div class="map-body">
-            <h3>{{ release.name }}</h3>
+            <h3>{{ display_name }}</h3>
             <p class="map-date">
                 <i class="fas fa-calendar"></i>
                 {{ release.published_at | date: "%d %b %Y" }}
@@ -86,6 +108,7 @@ description: "Browse and download all custom Halo: PC/CE maps by NakedChick."
     {% endfor %}
 </div>
 <p class="empty-state search-empty" hidden><i class="fas fa-magnifying-glass"></i> No maps match your search.</p>
+<nav aria-label="Maps pagination" class="maps-pagination" id="maps-pagination"></nav>
 {% else %}
 <div class="empty-state">
     <i class="fas fa-box-open"></i>
@@ -171,9 +194,21 @@ description: "Browse and download all custom Halo: PC/CE maps by NakedChick."
 
     .maps-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(var(--maps-columns, 3), 1fr);
         gap: 2rem;
         margin-bottom: 2rem;
+    }
+
+    @media (max-width: 900px) {
+        .maps-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .maps-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     .map-card {
@@ -339,5 +374,43 @@ description: "Browse and download all custom Halo: PC/CE maps by NakedChick."
         display: block;
         margin-bottom: 1rem;
         color: var(--primary);
+    }
+
+    .maps-pagination {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 1rem 0 2.5rem;
+    }
+
+    .maps-pagination .page-btn {
+        min-width: 42px;
+        padding: 0.5rem 0.9rem;
+        border-radius: 999px;
+        border: 1px solid var(--border-glow);
+        background: rgba(0, 0, 0, 0.3);
+        color: var(--text-light);
+        font-family: var(--font-header), serif;
+        font-weight: 500;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .maps-pagination .page-btn:hover:not(:disabled) {
+        border-color: var(--primary);
+        background: rgba(201, 161, 90, 0.1);
+    }
+
+    .maps-pagination .page-btn.active {
+        background: var(--primary);
+        color: var(--bg-dark);
+        border-color: var(--primary);
+    }
+
+    .maps-pagination .page-btn:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
     }
 </style>
