@@ -1,5 +1,28 @@
 [
   {
+    "id": 394749423,
+    "tag": "PC-LIBERTY-DOWNTOWN",
+    "name": "PC-LIBERTY-DOWNTOWN",
+    "body": "LIBERTY CLAN PLAYING GAMES DOWNTOWN",
+    "prerelease": false,
+    "published_at": "2026-09-23T14:32:36Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC-LIBERTY-DOWNTOWN",
+    "games": [
+      "PC"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_downtown_1.rar",
+        "size": 75691890,
+        "size_human": "72 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-DOWNTOWN/liberty_downtown_1.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394747952,
     "tag": "PC-LIBERTY-DODGE-BALL",
     "name": "[PC]LIBERTY-DODGE-BALL",
