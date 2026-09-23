@@ -463,7 +463,7 @@
     "id": 394736877,
     "tag": "PC-FROZEN-BEAVERCREEK-1",
     "name": "[PC]FROZEN-BEAVERCREEK-1",
-    "body": "BEAVERCREEK FROZEN FOR PC",
+    "body": "BEAVERCREEK FROZEN FOR HALO PC",
     "prerelease": false,
     "published_at": "2026-09-23T14:19:29Z",
     "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC-FROZEN-BEAVERCREEK-1",
@@ -568,7 +568,7 @@
         "name": "liberty_triduct.7z",
         "size": 29081263,
         "size_human": "28 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-Liberty-Triduct/liberty_triduct.7z",
         "content_type": "application/x-compressed"
       }
