@@ -1,5 +1,28 @@
 [
   {
+    "id": 394832461,
+    "tag": "CE-LIBERTY-WARTORN-COVE",
+    "name": "[CE]LIBERTY-WARTORN-COVE",
+    "body": "LIBERTY WARTORN COVE FOR HALO CE",
+    "prerelease": false,
+    "published_at": "2026-09-23T16:05:42Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/CE-LIBERTY-WARTORN-COVE",
+    "games": [
+      "CE"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_wartorn_cov.rar",
+        "size": 19545495,
+        "size_human": "19 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-WARTORN-COVE/liberty_wartorn_cov.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394831276,
     "tag": "CE-LIBERTY-TRENCHFOOT",
     "name": "[CE]LIBERTY-TRENCHFOOT",
