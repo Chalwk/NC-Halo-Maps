@@ -1,5 +1,28 @@
 [
   {
+    "id": 394763710,
+    "tag": "PC-TSCE-V2",
+    "name": "[PC]TSCE-V2",
+    "body": "TSCE V2 FOR HALO PC",
+    "prerelease": false,
+    "published_at": "2026-09-23T14:48:08Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC-TSCE-V2",
+    "games": [
+      "PC"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "tsce_v2_pc.rar",
+        "size": 98822502,
+        "size_human": "94 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-TSCE-V2/tsce_v2_pc.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394762731,
     "tag": "PC-SUMMER-TUMULUS",
     "name": "[PC]SUMMER-TUMULUS",
