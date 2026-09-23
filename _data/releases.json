@@ -3,7 +3,7 @@
     "id": 394894655,
     "tag": "PC-LIBERTY-FOUNDRY",
     "name": "[PC] LIBERTY-FOUNDRY",
-    "body": "LIBERTY FOUNDRY FOR HALO PC\r\n<img width=\"1280\" height=\"720\" alt=\"foundry\" src=\"https://github.com/user-attachments/assets/cc393903-9a37-4356-a284-c488567edc90\" />\r\n",
+    "body": "LIBERTY FOUNDRY FOR HALO PC\r\n",
     "prerelease": false,
     "published_at": "2026-09-23T17:22:44Z",
     "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC-LIBERTY-FOUNDRY",
@@ -11,16 +11,7 @@
       "PC"
     ],
     "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-FOUNDRY/foundry.jpg",
-    "assets": [
-      {
-        "name": "liberty_foundry_1.rar",
-        "size": 103617967,
-        "size_human": "99 MB",
-        "download_count": 0,
-        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-FOUNDRY/liberty_foundry_1.rar",
-        "content_type": "application/x-compressed"
-      }
-    ]
+    "assets": []
   },
   {
     "id": 394893853,
