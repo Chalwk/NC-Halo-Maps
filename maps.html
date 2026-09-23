@@ -21,6 +21,16 @@ columns: 3
 
 {% assign releases = site.data.releases | sort: 'published_at' | reverse %}
 
+{%- comment -%}
+  Total downloads across every map, for the toolbar summary.
+{%- endcomment -%}
+{% assign site_total_downloads = 0 %}
+{% for release in releases %}
+    {% for asset in release.assets %}
+        {% assign site_total_downloads = site_total_downloads | plus: asset.download_count %}
+    {% endfor %}
+{% endfor %}
+
 <div class="maps-toolbar">
     <div class="search-wrap">
         <i aria-hidden="true" class="fas fa-magnifying-glass"></i>
@@ -31,7 +41,18 @@ columns: 3
         <button aria-pressed="false" class="filter-btn" data-filter="PC" type="button">Combat Evolved</button>
         <button aria-pressed="false" class="filter-btn" data-filter="CE" type="button">Custom Edition</button>
     </div>
-    <span class="map-count">{{ releases.size }} map{% if releases.size != 1 %}s{% endif %} published</span>
+    <div class="sort-wrap">
+        <label class="sr-only" for="map-sort">Sort maps by</label>
+        <select id="map-sort">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+            <option value="name-asc">Name (A-Z)</option>
+            <option value="name-desc">Name (Z-A)</option>
+            <option value="downloads">Most downloaded</option>
+        </select>
+    </div>
+    <span class="map-count">{{ releases.size }} map{% if releases.size != 1 %}s{% endif %} published &middot; {{
+        site_total_downloads }} total download{% if site_total_downloads != 1 %}s{% endif %}</span>
 </div>
 
 {% if releases.size > 0 %}
@@ -57,7 +78,16 @@ columns: 3
         {% endif %}
     {% endif %}
 
-    <article class="map-card" data-games="{{ release.games | join: ',' }}" data-name="{{ display_name | downcase }}"
+    {%- comment -%}
+      Total downloads for this one release, summed across its attached files.
+    {%- endcomment -%}
+    {% assign total_downloads = 0 %}
+    {% for asset in release.assets %}
+        {% assign total_downloads = total_downloads | plus: asset.download_count %}
+    {% endfor %}
+
+    <article class="map-card" data-downloads="{{ total_downloads }}" data-games="{{ release.games | join: ',' }}"
+        data-name="{{ display_name | downcase }}" data-published="{{ release.published_at | date_to_xmlschema }}"
         id="release-{{ release.id }}">
         <div class="map-thumb">
             {% if release.thumbnail %}
@@ -81,6 +111,10 @@ columns: 3
             <p class="map-date">
                 <i class="fas fa-calendar"></i>
                 {{ release.published_at | date: "%d %b %Y" }}
+                <span class="map-downloads-count">
+                    <i class="fas fa-download"></i>
+                    {{ total_downloads }} download{% if total_downloads != 1 %}s{% endif %}
+                </span>
             </p>
             <p class="map-description">
                 {{ release.body | markdownify | strip_html | truncatewords: 30 }}
@@ -100,9 +134,15 @@ columns: 3
             <p class="no-assets"><i class="fas fa-triangle-exclamation"></i> No files attached to this release.</p>
             {% endif %}
 
-            <a class="map-source-link" href="{{ release.html_url }}" rel="noopener" target="_blank">
-                View full release notes on GitHub <i class="fas fa-arrow-up-right-from-square fa-xs"></i>
-            </a>
+            <div class="map-links">
+                <a class="map-source-link" href="{{ release.html_url }}" rel="noopener" target="_blank">
+                    View full release notes on GitHub <i class="fas fa-arrow-up-right-from-square fa-xs"></i>
+                </a>
+                <button aria-label="Copy link to {{ display_name }}" class="copy-link-btn"
+                    data-url="{{ site.url }}{{ site.baseurl }}/maps/#release-{{ release.id }}" type="button">
+                    <i class="fas fa-link"></i> <span class="copy-link-label">Copy link</span>
+                </button>
+            </div>
         </div>
     </article>
     {% endfor %}
@@ -124,6 +164,18 @@ columns: 3
         align-items: center;
         justify-content: space-between;
         margin: 2rem 0;
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
     }
 
     .search-wrap {
@@ -185,6 +237,34 @@ columns: 3
         background: var(--primary);
         color: var(--bg-dark);
         border-color: var(--primary);
+    }
+
+    .sort-wrap {
+        flex: 0 0 auto;
+    }
+
+    #map-sort {
+        padding: 0.55rem 1.1rem;
+        border-radius: 999px;
+        border: 1px solid var(--border-glow);
+        background: rgba(0, 0, 0, 0.3);
+        color: var(--text-light);
+        font-family: var(--font-header), serif;
+        font-weight: 500;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    #map-sort:hover,
+    #map-sort:focus {
+        border-color: var(--primary);
+        outline: none;
+    }
+
+    #map-sort option {
+        background: var(--bg-panel);
+        color: var(--text-light);
     }
 
     .map-count {
@@ -296,9 +376,17 @@ columns: 3
     }
 
     .map-date {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem 0.9rem;
         color: var(--text-muted);
         font-size: 0.9rem;
         margin-bottom: 0.8rem;
+    }
+
+    .map-downloads-count {
+        color: var(--text-muted);
     }
 
     .map-description {
@@ -352,15 +440,49 @@ columns: 3
         margin-bottom: 1rem;
     }
 
+    .map-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem 1rem;
+        margin-top: auto;
+    }
+
     .map-source-link {
         font-size: 0.9rem;
         color: var(--text-muted);
         text-decoration: none;
-        margin-top: auto;
     }
 
     .map-source-link:hover {
         color: var(--accent);
+    }
+
+    .copy-link-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: transparent;
+        border: 1px solid var(--border-glow);
+        color: var(--text-muted);
+        font-family: var(--font-body), serif;
+        font-size: 0.85rem;
+        padding: 0.35rem 0.8rem;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: var(--transition);
+        white-space: nowrap;
+    }
+
+    .copy-link-btn:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+
+    .copy-link-btn.copied {
+        border-color: var(--primary);
+        color: var(--primary);
     }
 
     .empty-state {
@@ -376,6 +498,7 @@ columns: 3
         color: var(--primary);
     }
 
+    /* Pagination controls */
     .maps-pagination {
         display: flex;
         flex-wrap: wrap;

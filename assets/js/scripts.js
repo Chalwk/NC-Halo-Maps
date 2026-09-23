@@ -44,23 +44,108 @@ document.addEventListener('DOMContentLoaded', function () {
     const mapsGrid = document.getElementById('maps-grid');
     const searchEmpty = document.querySelector('.search-empty');
     const filterButtons = document.querySelectorAll('.filter-btn');
+    const sortSelect = document.getElementById('map-sort');
     const pagination = document.getElementById('maps-pagination');
+
+    document.querySelectorAll('.copy-link-btn').forEach(btn => {
+        const label = btn.querySelector('.copy-link-label');
+        const defaultLabel = label ? label.textContent : '';
+
+        btn.addEventListener('click', async () => {
+            const url = btn.dataset.url;
+            if (!url) return;
+
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    // Fallback for browsers/contexts without the Clipboard API.
+                    const temp = document.createElement('textarea');
+                    temp.value = url;
+                    temp.style.position = 'fixed';
+                    temp.style.opacity = '0';
+                    document.body.appendChild(temp);
+                    temp.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(temp);
+                }
+
+                btn.classList.add('copied');
+                if (label) label.textContent = 'Copied!';
+
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    if (label) label.textContent = defaultLabel;
+                }, 2000);
+            } catch (err) {
+                // Clipboard access can fail (permissions, unsupported browser);
+                // fail quietly rather than breaking the page.
+            }
+        });
+    });
 
     if (mapsGrid) {
         const cards = Array.from(mapsGrid.querySelectorAll('.map-card'));
+
+        // data-per-page comes from the `per_page` front-matter value on
+        // maps.html. 0 (or missing/invalid) means "show everything, no pagination".
         const perPage = parseInt(mapsGrid.dataset.perPage, 10) || 0;
 
-        let activeFilter = 'all';
-        let currentPage = 1;
+        const validFilters = ['all', 'PC', 'CE'];
+        const validSorts = ['newest', 'oldest', 'name-asc', 'name-desc', 'downloads'];
 
-        function getMatchingCards() {
-            const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
-            return cards.filter(card => {
-                const nameMatches = !query || card.dataset.name.includes(query);
-                const games = (card.dataset.games || '').split(',').filter(Boolean);
-                const gameMatches = activeFilter === 'all' || games.includes(activeFilter);
-                return nameMatches && gameMatches;
-            });
+        // Read initial state from the URL (?q=&game=&sort=&page=) so search
+        // results, filters, sorting, and page number are all bookmarkable
+        // and shareable as a link.
+        const initialParams = new URLSearchParams(window.location.search);
+
+        let activeFilter = validFilters.includes(initialParams.get('game')) ? initialParams.get('game') : 'all';
+        let currentSort = validSorts.includes(initialParams.get('sort')) ? initialParams.get('sort') : 'newest';
+        let currentPage = parseInt(initialParams.get('page'), 10) || 1;
+
+        if (searchInput && initialParams.get('q')) {
+            searchInput.value = initialParams.get('q');
+        }
+
+        filterButtons.forEach(btn => {
+            const isActive = btn.dataset.filter === activeFilter;
+            btn.classList.toggle('active', isActive);
+            btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+
+        if (sortSelect) {
+            sortSelect.value = currentSort;
+        }
+
+        function getSortedCards() {
+            const sorted = cards.slice();
+
+            switch (currentSort) {
+                case 'oldest':
+                    sorted.sort((a, b) => new Date(a.dataset.published) - new Date(b.dataset.published));
+                    break;
+                case 'name-asc':
+                    sorted.sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
+                    break;
+                case 'name-desc':
+                    sorted.sort((a, b) => b.dataset.name.localeCompare(a.dataset.name));
+                    break;
+                case 'downloads':
+                    sorted.sort((a, b) => (parseInt(b.dataset.downloads, 10) || 0) - (parseInt(a.dataset.downloads, 10) || 0));
+                    break;
+                case 'newest':
+                default:
+                    sorted.sort((a, b) => new Date(b.dataset.published) - new Date(a.dataset.published));
+            }
+
+            return sorted;
+        }
+
+        function cardMatches(card, query) {
+            const nameMatches = !query || card.dataset.name.includes(query);
+            const games = (card.dataset.games || '').split(',').filter(Boolean);
+            const gameMatches = activeFilter === 'all' || games.includes(activeFilter);
+            return nameMatches && gameMatches;
         }
 
         function renderPagination(totalPages) {
@@ -109,12 +194,32 @@ document.addEventListener('DOMContentLoaded', function () {
             );
         }
 
+        function updateUrl() {
+            const query = searchInput ? searchInput.value.trim() : '';
+            const params = new URLSearchParams();
+
+            if (query) params.set('q', query);
+            if (activeFilter !== 'all') params.set('game', activeFilter);
+            if (currentSort !== 'newest') params.set('sort', currentSort);
+            if (currentPage > 1) params.set('page', String(currentPage));
+
+            const search = params.toString();
+            const newUrl = window.location.pathname + (search ? `?${search}` : '') + window.location.hash;
+            window.history.replaceState(null, '', newUrl);
+        }
+
         function applyFilters(resetPage) {
             if (resetPage) currentPage = 1;
 
-            const matching = getMatchingCards();
-            const totalPages = perPage > 0 ? Math.max(1, Math.ceil(matching.length / perPage)) : 1;
+            // Reorder the actual cards in the grid to match the chosen sort,
+            // so the visual left-to-right, top-to-bottom order is correct.
+            const sorted = getSortedCards();
+            sorted.forEach(card => mapsGrid.appendChild(card));
 
+            const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+            const matching = sorted.filter(card => cardMatches(card, query));
+
+            const totalPages = perPage > 0 ? Math.max(1, Math.ceil(matching.length / perPage)) : 1;
             if (currentPage > totalPages) currentPage = totalPages;
             if (currentPage < 1) currentPage = 1;
 
@@ -131,6 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             renderPagination(totalPages);
+            updateUrl();
         }
 
         if (searchInput) {
@@ -150,6 +256,15 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        applyFilters(true);
+        if (sortSelect) {
+            sortSelect.addEventListener('change', () => {
+                currentSort = sortSelect.value;
+                applyFilters(true);
+            });
+        }
+
+        // Don't reset the page on first load, so a shared link that includes
+        // ?page=2 (or ?q=, ?game=, ?sort=) opens showing the same view.
+        applyFilters(false);
     }
 });
