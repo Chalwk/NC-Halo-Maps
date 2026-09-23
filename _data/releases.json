@@ -1,5 +1,28 @@
 [
   {
+    "id": 394801673,
+    "tag": "CE-BLAST-ODST",
+    "name": "[CE]LIBERTY-BLAST-ODST",
+    "body": "LIBERTY BLAST ODST FOR HALO CE",
+    "prerelease": false,
+    "published_at": "2026-09-23T15:29:56Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/CE-BLAST-ODST",
+    "games": [
+      "CE"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_blast1_odst.rar",
+        "size": 24891625,
+        "size_human": "24 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-BLAST-ODST/liberty_blast1_odst.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394800103,
     "tag": "CE-LIBERTY-ARRIVAL",
     "name": "[CE]LIBERTY-ARRIVAL",
