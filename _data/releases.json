@@ -1,5 +1,28 @@
 [
   {
+    "id": 394751577,
+    "tag": "PC-LIBERTY-IMPOSING",
+    "name": "[PC]LIBERTY-IMPOSING",
+    "body": "LIBERTY CLAN IMPOSING WINTER EDITION FOR PC",
+    "prerelease": false,
+    "published_at": "2026-09-23T14:35:04Z",
+    "html_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/tag/PC-LIBERTY-IMPOSING",
+    "games": [
+      "PC"
+    ],
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_imposing_1.rar",
+        "size": 53724612,
+        "size_human": "51 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-IMPOSING/liberty_imposing_1.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
+  },
+  {
     "id": 394749423,
     "tag": "PC-LIBERTY-DOWNTOWN",
     "name": "PC-LIBERTY-DOWNTOWN",
