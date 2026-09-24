@@ -113,7 +113,6 @@ Total downloads across every map, for the toolbar summary.
                 {{ release.body | markdownify | strip_html | truncatewords: 30 }}
             </p>
 
-            {% if release.assets.size > 0 %}
             <div class="map-downloads">
                 {% for asset in release.assets %}
                 <a class="download-btn" download href="{{ asset.browser_download_url }}">
@@ -123,9 +122,9 @@ Total downloads across every map, for the toolbar summary.
                 </a>
                 {% endfor %}
             </div>
-            {% else %}
+            {% unless release.assets.size > 0 %}
             <p class="no-assets"><i class="fas fa-triangle-exclamation"></i> No files attached to this release.</p>
-            {% endif %}
+            {% endunless %}
 
             <div class="map-links">
                 <a class="map-source-link" href="{{ release.html_url }}" rel="noopener" target="_blank">
