@@ -11,7 +11,16 @@
       "PC"
     ],
     "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-FOUNDRY/foundry.jpg",
-    "assets": []
+    "assets": [
+      {
+        "name": "liberty_foundry_1.rar",
+        "size": 103617967,
+        "size_human": "99 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-FOUNDRY/liberty_foundry_1.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
   },
   {
     "id": 394893853,
@@ -191,7 +200,7 @@
         "name": "liberty-cursed-wynder.rar",
         "size": 9423109,
         "size_human": "9.0 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-CURSED-WYNDER/liberty-cursed-wynder.rar",
         "content_type": "application/x-compressed"
       }
@@ -237,7 +246,7 @@
         "name": "liberty_trenchfoot.rar",
         "size": 63690870,
         "size_human": "61 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-TRENCHFOOT/liberty_trenchfoot.rar",
         "content_type": "application/x-compressed"
       }
@@ -260,7 +269,7 @@
         "name": "liberty_nightglow_v2.rar",
         "size": 18121097,
         "size_human": "17 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-NIGHTGLOW/liberty_nightglow_v2.rar",
         "content_type": "application/x-compressed"
       }
@@ -283,7 +292,7 @@
         "name": "liberty_mgulch.rar",
         "size": 45708238,
         "size_human": "44 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-MGULCH/liberty_mgulch.rar",
         "content_type": "application/x-compressed"
       }
@@ -306,7 +315,7 @@
         "name": "liberty_mermaid_plaza.rar",
         "size": 28611079,
         "size_human": "27 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-MERMAID-PLAZA/liberty_mermaid_plaza.rar",
         "content_type": "application/x-compressed"
       }
@@ -398,7 +407,7 @@
         "name": "liberty_imposing.rar",
         "size": 53751331,
         "size_human": "51 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-IMPOSING/liberty_imposing.rar",
         "content_type": "application/x-compressed"
       }
@@ -444,7 +453,7 @@
         "name": "liberty_downtown.rar",
         "size": 75759201,
         "size_human": "72 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-DOWNTOWN/liberty_downtown.rar",
         "content_type": "application/x-compressed"
       }
@@ -467,7 +476,7 @@
         "name": "liberty_dodgeball.rar",
         "size": 42814412,
         "size_human": "41 MB",
-        "download_count": 1,
+        "download_count": 2,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-DODGEBALL/liberty_dodgeball.rar",
         "content_type": "application/x-compressed"
       }
@@ -513,7 +522,7 @@
         "name": "liberty_clan_proving_grounds.rar",
         "size": 23367886,
         "size_human": "22 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-CLAN-PROVING-GROUNDS/liberty_clan_proving_grounds.rar",
         "content_type": "application/x-compressed"
       }
@@ -536,7 +545,7 @@
         "name": "liberty_clan_hq.rar",
         "size": 34245257,
         "size_human": "33 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-CLAN-HQ/liberty_clan_hq.rar",
         "content_type": "application/x-compressed"
       }
@@ -582,7 +591,7 @@
         "name": "liberty_blood_covenant.rar",
         "size": 72229337,
         "size_human": "69 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-BLOOD-COVENANT/liberty_blood_covenant.rar",
         "content_type": "application/x-compressed"
       }
@@ -628,7 +637,7 @@
         "name": "liberty_blast1_odst.rar",
         "size": 24891625,
         "size_human": "24 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-BLAST-ODST/liberty_blast1_odst.rar",
         "content_type": "application/x-compressed"
       }
@@ -651,7 +660,7 @@
         "name": "liberty_arrival.rar",
         "size": 24705509,
         "size_human": "24 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-ARRIVAL/liberty_arrival.rar",
         "content_type": "application/x-compressed"
       }
