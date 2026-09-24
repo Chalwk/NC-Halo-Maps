@@ -233,10 +233,13 @@ Total downloads across every map, for the toolbar summary.
 
     .sort-wrap {
         flex: 0 0 auto;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
     }
 
     #map-sort {
-        padding: 0.55rem 1.1rem;
+        padding: 0.55rem 2.6rem 0.55rem 1.1rem;
         border-radius: 999px;
         border: 1px solid var(--border-glow);
         background: rgba(0, 0, 0, 0.3);
@@ -246,6 +249,9 @@ Total downloads across every map, for the toolbar summary.
         font-size: 0.95rem;
         cursor: pointer;
         transition: var(--transition);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
     }
 
     #map-sort:hover,
@@ -257,6 +263,20 @@ Total downloads across every map, for the toolbar summary.
     #map-sort option {
         background: var(--bg-panel);
         color: var(--text-light);
+    }
+
+    .sort-wrap::after {
+        content: '\f078';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        right: 1.15rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--primary);
+        font-size: 1.05rem;
+        line-height: 1;
+        pointer-events: none;
     }
 
     .map-count {
