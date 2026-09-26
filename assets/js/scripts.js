@@ -239,6 +239,29 @@ document.addEventListener('DOMContentLoaded', function () {
             updateUrl();
         }
 
+        // Navigate to the page containing the card referenced by the URL hash.
+        function goToHashTarget() {
+            if (!window.location.hash) return;
+            const targetId = window.location.hash.substring(1); // strip '#'
+            const targetCard = document.getElementById(targetId);
+            if (!targetCard) return;
+
+            const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+            const matching = getSortedCards().filter(card => cardMatches(card, query));
+            const index = matching.indexOf(targetCard);
+
+            if (index !== -1 && perPage > 0) {
+                const targetPage = Math.floor(index / perPage) + 1;
+                if (targetPage !== currentPage) {
+                    currentPage = targetPage;
+                    applyFilters(false); // do not reset the page
+                }
+            }
+
+            // Scroll to the target card after the grid has been updated.
+            targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
         if (searchInput) {
             searchInput.addEventListener('input', () => applyFilters(true));
         }
@@ -263,8 +286,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
-        // Don't reset the page on first load, so a shared link that includes
-        // ?page=2 (or ?q=, ?game=, ?sort=) opens showing the same view.
         applyFilters(false);
+        goToHashTarget();
+        window.addEventListener('hashchange', goToHashTarget);
     }
 });
