@@ -11,7 +11,16 @@
       "PC"
     ],
     "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-FOUNDRY/foundry.jpg",
-    "assets": []
+    "assets": [
+      {
+        "name": "liberty_foundry_1.rar",
+        "size": 103617967,
+        "size_human": "99 MB",
+        "download_count": 2,
+        "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-FOUNDRY/liberty_foundry_1.rar",
+        "content_type": "application/x-compressed"
+      }
+    ]
   },
   {
     "id": 394893853,
@@ -24,13 +33,13 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-CURSED-WYNDER/cursed.winder.png",
     "assets": [
       {
         "name": "liberty-cursed-wynder_1.rar",
         "size": 9521104,
         "size_human": "9.1 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-CURSED-WYNDER/liberty-cursed-wynder_1.rar",
         "content_type": "application/x-compressed"
       }
@@ -47,7 +56,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-TSCE-V2/tsce.png",
     "assets": [
       {
         "name": "tsce_v2.rar",
@@ -70,7 +79,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-SUMMER-ICE/summer.ice.png",
     "assets": [
       {
         "name": "Summer_Ice.rar",
@@ -93,7 +102,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-STINGER-OVERWATCH/stinger.png",
     "assets": [
       {
         "name": "Stinger_Overwatch.rar",
@@ -116,7 +125,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-SNOW-VALLEY/snow.valley.png",
     "assets": [
       {
         "name": "snow_valley_ce.rar",
@@ -139,7 +148,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-SELENIUM/selenium.png",
     "assets": [
       {
         "name": "selenium_ce.rar",
@@ -162,7 +171,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-PRISON-BREAK/prison.break.png",
     "assets": [
       {
         "name": "prison_break.rar",
@@ -185,13 +194,13 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-CURSED-WYNDER/cursed.winder.png",
     "assets": [
       {
         "name": "liberty-cursed-wynder.rar",
         "size": 9423109,
         "size_human": "9.0 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-CURSED-WYNDER/liberty-cursed-wynder.rar",
         "content_type": "application/x-compressed"
       }
@@ -208,7 +217,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-WARTORN-COVE/wartorn.cov.png",
     "assets": [
       {
         "name": "liberty_wartorn_cov.rar",
@@ -231,13 +240,13 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-TRENCHFOOT/trenchfoot.png",
     "assets": [
       {
         "name": "liberty_trenchfoot.rar",
         "size": 63690870,
         "size_human": "61 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-TRENCHFOOT/liberty_trenchfoot.rar",
         "content_type": "application/x-compressed"
       }
@@ -254,13 +263,13 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-NIGHTGLOW/nightglow.png",
     "assets": [
       {
         "name": "liberty_nightglow_v2.rar",
         "size": 18121097,
         "size_human": "17 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-NIGHTGLOW/liberty_nightglow_v2.rar",
         "content_type": "application/x-compressed"
       }
@@ -277,13 +286,13 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-MGULCH/mgulch.png",
     "assets": [
       {
         "name": "liberty_mgulch.rar",
         "size": 45708238,
         "size_human": "44 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-MGULCH/liberty_mgulch.rar",
         "content_type": "application/x-compressed"
       }
@@ -300,13 +309,13 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-MERMAID-PLAZA/mermaid.png",
     "assets": [
       {
         "name": "liberty_mermaid_plaza.rar",
         "size": 28611079,
         "size_human": "27 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-MERMAID-PLAZA/liberty_mermaid_plaza.rar",
         "content_type": "application/x-compressed"
       }
@@ -323,7 +332,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-LAST-VOYAGE/last.voyage.png",
     "assets": [
       {
         "name": "liberty_last_voyage.rar",
@@ -346,7 +355,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-JUNGLEWARFARE/jungle.warfare.png",
     "assets": [
       {
         "name": "liberty_junglewarfare.rar",
@@ -369,7 +378,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-INSOMNIA/insomnia.png",
     "assets": [
       {
         "name": "liberty_insomnia.rar",
@@ -392,13 +401,13 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-IMPOSING/imposing.png",
     "assets": [
       {
         "name": "liberty_imposing.rar",
         "size": 53751331,
         "size_human": "51 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-IMPOSING/liberty_imposing.rar",
         "content_type": "application/x-compressed"
       }
@@ -421,7 +430,7 @@
         "name": "liberty_foundry.rar",
         "size": 103703418,
         "size_human": "99 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-FOUNDRY/liberty_foundry.rar",
         "content_type": "application/x-compressed"
       }
@@ -438,13 +447,13 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-DOWNTOWN/downtown.png",
     "assets": [
       {
         "name": "liberty_downtown.rar",
         "size": 75759201,
         "size_human": "72 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-DOWNTOWN/liberty_downtown.rar",
         "content_type": "application/x-compressed"
       }
@@ -461,13 +470,13 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-DODGEBALL/dodge.ball.png",
     "assets": [
       {
         "name": "liberty_dodgeball.rar",
         "size": 42814412,
         "size_human": "41 MB",
-        "download_count": 1,
+        "download_count": 2,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-DODGEBALL/liberty_dodgeball.rar",
         "content_type": "application/x-compressed"
       }
@@ -484,7 +493,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-DEAGLE/deagle.png",
     "assets": [
       {
         "name": "Liberty_Deagle.rar",
@@ -507,13 +516,13 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-CLAN-PROVING-GROUNDS/proving.grounds.png",
     "assets": [
       {
         "name": "liberty_clan_proving_grounds.rar",
         "size": 23367886,
         "size_human": "22 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-CLAN-PROVING-GROUNDS/liberty_clan_proving_grounds.rar",
         "content_type": "application/x-compressed"
       }
@@ -530,13 +539,13 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-CLAN-HQ/liberty.clan.hq.png",
     "assets": [
       {
         "name": "liberty_clan_hq.rar",
         "size": 34245257,
         "size_human": "33 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-CLAN-HQ/liberty_clan_hq.rar",
         "content_type": "application/x-compressed"
       }
@@ -553,7 +562,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-BOUNTY-TRIBUTE/bounty.tribute.png",
     "assets": [
       {
         "name": "Liberty_Bounty_Tribute.rar",
@@ -576,13 +585,13 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-BLOOD-COVENANT/blood.covenant.png",
     "assets": [
       {
         "name": "liberty_blood_covenant.rar",
         "size": 72229337,
         "size_human": "69 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-BLOOD-COVENANT/liberty_blood_covenant.rar",
         "content_type": "application/x-compressed"
       }
@@ -622,13 +631,13 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-BLAST-ODST/blast.odst.png",
     "assets": [
       {
         "name": "liberty_blast1_odst.rar",
         "size": 24891625,
         "size_human": "24 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-BLAST-ODST/liberty_blast1_odst.rar",
         "content_type": "application/x-compressed"
       }
@@ -645,13 +654,13 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-ARRIVAL/arrival.png",
     "assets": [
       {
         "name": "liberty_arrival.rar",
         "size": 24705509,
         "size_human": "24 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-ARRIVAL/liberty_arrival.rar",
         "content_type": "application/x-compressed"
       }
@@ -668,7 +677,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-LIBERTY-APARTMENTS/apartments.png",
     "assets": [
       {
         "name": "liberty_apartments.rar",
@@ -691,7 +700,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-CARGO-BAY/cargo.bay.png",
     "assets": [
       {
         "name": "Cargo_Bay.rar",
@@ -714,7 +723,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-SNOWY-BIGASS/snowy.bigass.png",
     "assets": [
       {
         "name": "A_Snowy_Bigass.rar",
@@ -737,7 +746,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-TSCE-V2/tsce.png",
     "assets": [
       {
         "name": "tsce_v2_pc.rar",
@@ -760,7 +769,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-SUMMER-TUMULUS/tumulus.png",
     "assets": [
       {
         "name": "summer_of_tumulus_1.rar",
@@ -783,13 +792,13 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-SNOW-VALLEY/snow.valley.png",
     "assets": [
       {
         "name": "snow_valley_pc.rar",
         "size": 49057238,
         "size_human": "47 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-SNOW-VALLEY/snow_valley_pc.rar",
         "content_type": "application/x-compressed"
       }
@@ -806,7 +815,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-TRENCHFOOT/trenchfoot.png",
     "assets": [
       {
         "name": "Liberty_Trenchfoot_1.rar",
@@ -829,7 +838,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-PRISON-BREAK/prison.break.png",
     "assets": [
       {
         "name": "liberty_prison_break_1.rar",
@@ -852,13 +861,13 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-NIGHTGLOW/nightglow.png",
     "assets": [
       {
         "name": "liberty_nightglow_1.rar",
         "size": 18197021,
         "size_human": "17 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-NIGHTGLOW/liberty_nightglow_1.rar",
         "content_type": "application/x-compressed"
       }
@@ -875,13 +884,13 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-MGULCH/mgulch.png",
     "assets": [
       {
         "name": "liberty_mgulch_1.rar",
         "size": 46034033,
         "size_human": "44 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-MGULCH/liberty_mgulch_1.rar",
         "content_type": "application/x-compressed"
       }
@@ -898,7 +907,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-MERMAID-PLAZA/mermaid.png",
     "assets": [
       {
         "name": "liberty_mermaid_plaza_1.rar",
@@ -921,7 +930,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LAST-VOYAGE/last.voyage.png",
     "assets": [
       {
         "name": "liberty_last_voyage_1.rar",
@@ -944,7 +953,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-INSOMNIA/insomnia.png",
     "assets": [
       {
         "name": "liberty_insomnia_1.rar",
@@ -967,7 +976,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-IMPOSING/imposing.png",
     "assets": [
       {
         "name": "liberty_imposing_1.rar",
@@ -990,7 +999,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-DOWNTOWN/downtown.png",
     "assets": [
       {
         "name": "liberty_downtown_1.rar",
@@ -1013,7 +1022,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-DODGE-BALL/dodge.ball.png",
     "assets": [
       {
         "name": "liberty_dodgeball_1.rar",
@@ -1036,7 +1045,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-CLAN-PROVING-GROUNDS/proving.grounds.png",
     "assets": [
       {
         "name": "liberty_clan_proving_grounds_1.rar",
@@ -1059,7 +1068,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-CLAN-HQ/liberty.clan.hq.png",
     "assets": [
       {
         "name": "liberty_clan_hq_1.rar",
@@ -1082,7 +1091,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-BLOOD-COVENANT/blood.covenant.png",
     "assets": [
       {
         "name": "liberty_blood_covenant_1.rar",
@@ -1105,7 +1114,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-BLAST-ODST/blast.odst.png",
     "assets": [
       {
         "name": "liberty_blast1_odst_1.rar",
@@ -1128,7 +1137,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-ARRIVAL/arrival.png",
     "assets": [
       {
         "name": "liberty_arrival_1.rar",
@@ -1151,7 +1160,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-LIBERTY-APARTMENTS/apartments.png",
     "assets": [
       {
         "name": "liberty_apartments_1.rar",
@@ -1174,7 +1183,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-JUNGLEWARFARE-1/jungle.warfare.png",
     "assets": [
       {
         "name": "liberty_junglewarfare_1.rar",
@@ -1197,7 +1206,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-FROZEN-BEAVERCREEK-1/frozen.beavercreek.png",
     "assets": [
       {
         "name": "frozen_beaver_creek_1.rar",
@@ -1220,7 +1229,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-CARGO-BAY-1/cargo.bay.png",
     "assets": [
       {
         "name": "Cargo_Bay_1.rar",
@@ -1243,7 +1252,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-A-SNOWY-BIGASS-PC/snowy.bigass.png",
     "assets": [
       {
         "name": "A_Snowy_Bigass_pc.rar",
@@ -1266,7 +1275,7 @@
     "games": [
       "PC"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/PC-Stinger-Overwatch/stinger.png",
     "assets": [
       {
         "name": "Stinger_Overwatch_1.rar",
@@ -1289,7 +1298,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-Liberty-Triduct/triduct.png",
     "assets": [
       {
         "name": "liberty_triduct.7z",
@@ -1312,7 +1321,7 @@
     "games": [
       "CE"
     ],
-    "thumbnail": null,
+    "thumbnail": "https://github.com/nakedchick-code/NC-Halo-Maps/releases/download/CE-Frozen-Beaver-Creek/frozen.beavercreek.png",
     "assets": [
       {
         "name": "frozen_beaver_creek.map",
